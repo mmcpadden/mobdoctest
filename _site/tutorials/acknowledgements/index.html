@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>  Obtaining Order Acknowledgements |  Tangoe Mobile Procurement API </title>
+
+  <script src="http://localhost:4000/js/jquery/jquery-2.1.4.min.js"></script>
+
+  <link rel="stylesheet" href="http://localhost:4000/css/tgUI-style.0.2.8.min.css" />
+  <link rel="stylesheet" href="http://localhost:4000/css/styles-syntax.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/styles.css" />
+
+</head>
+<body>
+
+  <div id="tg-shellMain">
+
+    <header class="dc-banner">
+     <div class="tg-display--table  tg-one-whole  tg-pad--half">
+      <div class="tg-display--table-cell"  style="width:120px;padding-top:4px">
+        <a href="http://localhost:4000"><img src="http://localhost:4000/images/TangoeLogo.png" alt="Tangoe" class="dc-logo" /></a>
+      </div><!--
+    --><div class="tg-display--table-cell  tg-text--left  tg-valign--top"><span style="color:#fff">REST APIs ~</span> Mobile Procurement (MOBPROC) v1</div>
+     </div>
+
+     <div class="dc-banner--royal  tg-text--right  tg-pad--right">
+        <div class="dc-bannerLinks">
+          <a href="https://anypoint.mulesoft.com/apiplatform/tangoe#/portals" target="_blank" class="dc-bannerLink">Developer Portal - Log In</a>
+        </div>
+      </div>
+    </header>
+
+
+
+
+<div class="dc-page" style="padding-top:0px">
+   
+  <!-- tgUI grid version -->
+  <div class="dc-pageLayout">
+    <div class="dc-pageLayout_cell--nav  tg-two-fifths">
+
+      <nav role="navigation" class="dc-navPanel">
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000">Home</a>
+        
+         
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/start/register/">Getting Started</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/start/register/">Register your App</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/start/first-call/">Make your First Call in Minutes</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/start/explore/">Test and Explore</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/concepts/security/">Using the API</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/security/">Authentication</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/security/access_tokens">Access Tokens</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/headers/">Request Headers</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/metadata/">Metadata</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/pagination/">Pagination</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/actor/">Setting Context ('the Actor')</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/uriparameters/">URI Parameters</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/errors/">Errors</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/glossary/">Glossary of Terms</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/tutorials/orders/">Tutorials</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/">Submitting an Order</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/new_activation/">&nbsp;&nbsp;&nbsp;&nbsp;  NEW ACTIVATION</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/upgrade/">&nbsp;&nbsp;&nbsp;&nbsp;  UPGRADE</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/port_number/">&nbsp;&nbsp;&nbsp;&nbsp;  PORT NUMBER</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/order_accessories/">&nbsp;&nbsp;&nbsp;&nbsp;  ORDER ACCESSORIES</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/suspend/">&nbsp;&nbsp;&nbsp;&nbsp;  SUSPEND</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/unsuspend/">&nbsp;&nbsp;&nbsp;&nbsp;  UNSUSPEND</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/deactivate/">&nbsp;&nbsp;&nbsp;&nbsp;  DEACTIVATE</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/update_features/">&nbsp;&nbsp;&nbsp;&nbsp;  UPDATE FEATURES</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/swap_devices/">&nbsp;&nbsp;&nbsp;&nbsp;  SWAP DEVICES</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/xfer_service_out/">&nbsp;&nbsp;&nbsp;&nbsp;  TRANSFER SERVICE OUT</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/xfer_service_in/">&nbsp;&nbsp;&nbsp;&nbsp;  TRANSFER SERVICE IN</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/xfer_service_in_and_port/">&nbsp;&nbsp;&nbsp;&nbsp;  TRANSFER SERVICE IN &amp; PORT</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/properties/">Obtaining Order Properties</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/acknowledgements/">Obtaining Acknowledgements</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/states/">Lists of States and Provinces</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/addresses/">Formatting an Address</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/approvals/">Approving an Order</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/move/">Moving a Service Assignment</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/policies/versioning/">Policies</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/policies/versioning/">Versioning Policy</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/releases/">Releases</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-3-6/">1.3.6</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-3-1/">1.3.1</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-2-1/">1.2.1</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-2-0/">1.2.0</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-1-0/">1.1.0</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/contact/">Contact</a>
+        
+         
+          
+
+            
+         
+        </div>
+      
+      </nav> 
+
+    </div><!--
+    --><div class="tg-grid__cell  tg-pad"> 
+
+      <h1 id="obtaining-order-acknowledgements">Obtaining Order Acknowledgements</h1>
+
+<p><strong>This tutorial describes the steps for obtaining the information and acknowledgements that the vendor requires to be disclosed to the user when placing an order to transfer ownership of a service asset.</strong></p>
+
+<p><strong>Info blocks</strong> are additional pieces of information that a vendor wishes to disclose when transferring ownership. Additionally, most vendors also require that the user placing the transfer order acknowledge one or more points before the order can be placed. These <strong>acknowledgments</strong> are not used by the API to process the order. But rather, they are passed on to the third-party vendor who will be fulfilling your order. Some of these acknowledgments may be required to be populated in order for your order to be accepted.</p>
+
+<p><br /></p>
+
+<h2 id="the-acknowledgements-resource">The /acknowledgements resource</h2>
+
+<p>An API call can be made to the <strong>/acknowledgements</strong> resource to obtain the acknowledgements. The specific acknowledgements returned are determined based on the order transaction type and vendor who will be fulfilling the order.</p>
+
+<p>When making this API call, you must always set the following query parameters:</p>
+<ul>
+  <li><strong>transactionType</strong>  (e.g., XFER_SERVICE_OUT, XFER_SERVICE_IN, etc.).</li>
+  <li><strong>vendor</strong> – The ID of the vendor who will be fulfilling the order. This ID can be obtained from many resources (e.g., /vendors, /catalog/plans, etc.).</li>
+</ul>
+
+<p><br />
+Here is an illustration of an order acknowledgements request:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/acknowledgements?vendor=777&amp;transactionType=XFER_SERVICE_IN
+</code></pre></div></div>
+
+<p><br />
+The following example illustrates what the corresponding order acknowledgements response might look like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "infoblocks": [
+    {
+      "header": "Family &amp; Shared Minute Plans",
+      "paragraphs": [
+        {
+          "text": "PLEASE READ: In order to transfer a personally-liable account to a corporate-liable account, 
+          the user may be required to have service with the corporate carrier currently."
+        },
+        {
+          "text": "Before transferring your number, please contact your current carrier to resolve an outstanding 
+          balance, if required."
+        }
+      ]
+    },
+    {
+      "header": "Authorization of Transfer",
+      "paragraphs": [
+        {
+          "text": "PLEASE READ: By transferring your number to the company, you agree to give up all rights to 
+          that number. Depending upon the company's policy, the number may not be transferrable back to you."
+        }
+      ]
+    },
+    {
+      "header": "Termination Fee Notice",
+      "paragraphs": [
+        {
+          "text": "PLEASE READ: You may be required to pay a termination fee when moving your service number to a 
+          new carrier. Please contact your cellular provider to determine if a termination fee will be charged."
+        }
+      ]
+    }
+  ],
+  "acknowledgements": [
+    {
+      "id": "FAMILY_SHARED_MINUTE_PLAN",
+      "label": "I verify that the service number to be transferred is no longer on a family shared plan. This has 
+      been confirmed with my current carrier.",
+      "type": "BOOLEAN",
+      "validation": "REQUIRED"
+    },
+    {
+      "id": "AUTHORIZATION_OF_TRANSFER",
+      "label": "I authorize the transfer of liability for this service number to the company.",
+      "type": "BOOLEAN",
+      "validation": "REQUIRED"
+    },
+    {
+      "id": "TERMINATION_FEES",
+      "label": "I authorize this port of service to the new carrier. I accept personal responsibility for any 
+      termination fees or other charges incurred.",
+      "type": "BOOLEAN",
+      "validation": "REQUIRED"
+    }
+  ]
+}
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="contents-of-an-info-block">Contents of an Info Block</h2>
+
+<p>An individual info block contains the following required elements:</p>
+
+<ul>
+  <li><strong>header</strong> – A descriptive section heading label that is suitable for displaying to an end user.</li>
+  <li><strong>paragraphs</strong> – An array of text blocks that relate to the corresponding header element. The text returned is suitable for displaying to an end user.</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="contents-of-acknowledgements">Contents of Acknowledgements</h2>
+
+<p>An individual acknowledgement contains the following required elements:</p>
+
+<ul>
+  <li><strong>id</strong> – The unique ID identifying a specific acknowledgement.</li>
+  <li><strong>label</strong> – A descriptive label describing the acknowledgement that is suitable for displaying to an end user.</li>
+  <li><strong>type</strong> – Indicates the type of data to which the value should be set:
+    <ul>
+      <li><em>BOOLEAN</em>: True or False. True indicates the user’s acknowledgement.</li>
+    </ul>
+  </li>
+  <li><strong>validation</strong> – Required or Optional. Indicates whether or not the property is required by the vendor.</li>
+</ul>
+
+
+
+    </div>
+  </div>  
+</div>  
+ 
+    
+    <footer class="dc-footer">
+      <p class="">&copy; Copyright 2018 Tangoe  | <a href="http://www.tangoe.com/company" target="_blank">About Tangoe</a> | <a href="https://www.tangoe.com/privacy-policy/" target="_blank">Privacy Policy</a></p>
+    </footer> 
+  </div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-101745146-1', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+</html>

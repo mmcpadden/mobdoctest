@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>  Tutorials - SUSPEND Order |  Tangoe Mobile Procurement API </title>
+
+  <script src="http://localhost:4000/js/jquery/jquery-2.1.4.min.js"></script>
+
+  <link rel="stylesheet" href="http://localhost:4000/css/tgUI-style.0.2.8.min.css" />
+  <link rel="stylesheet" href="http://localhost:4000/css/styles-syntax.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/styles.css" />
+
+</head>
+<body>
+
+  <div id="tg-shellMain">
+
+    <header class="dc-banner">
+     <div class="tg-display--table  tg-one-whole  tg-pad--half">
+      <div class="tg-display--table-cell"  style="width:120px;padding-top:4px">
+        <a href="http://localhost:4000"><img src="http://localhost:4000/images/TangoeLogo.png" alt="Tangoe" class="dc-logo" /></a>
+      </div><!--
+    --><div class="tg-display--table-cell  tg-text--left  tg-valign--top"><span style="color:#fff">REST APIs ~</span> Mobile Procurement (MOBPROC) v1</div>
+     </div>
+
+     <div class="dc-banner--royal  tg-text--right  tg-pad--right">
+        <div class="dc-bannerLinks">
+          <a href="https://anypoint.mulesoft.com/apiplatform/tangoe#/portals" target="_blank" class="dc-bannerLink">Developer Portal - Log In</a>
+        </div>
+      </div>
+    </header>
+
+
+
+
+<div class="dc-page" style="padding-top:0px">
+   
+  <!-- tgUI grid version -->
+  <div class="dc-pageLayout">
+    <div class="dc-pageLayout_cell--nav  tg-two-fifths">
+
+      <nav role="navigation" class="dc-navPanel">
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000">Home</a>
+        
+         
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/start/register/">Getting Started</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/start/register/">Register your App</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/start/first-call/">Make your First Call in Minutes</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/start/explore/">Test and Explore</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/concepts/security/">Using the API</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/security/">Authentication</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/security/access_tokens">Access Tokens</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/headers/">Request Headers</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/metadata/">Metadata</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/pagination/">Pagination</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/actor/">Setting Context ('the Actor')</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/uriparameters/">URI Parameters</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/errors/">Errors</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/glossary/">Glossary of Terms</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/tutorials/orders/">Tutorials</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/">Submitting an Order</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/new_activation/">&nbsp;&nbsp;&nbsp;&nbsp;  NEW ACTIVATION</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/upgrade/">&nbsp;&nbsp;&nbsp;&nbsp;  UPGRADE</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/port_number/">&nbsp;&nbsp;&nbsp;&nbsp;  PORT NUMBER</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/order_accessories/">&nbsp;&nbsp;&nbsp;&nbsp;  ORDER ACCESSORIES</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/suspend/">&nbsp;&nbsp;&nbsp;&nbsp;  SUSPEND</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/unsuspend/">&nbsp;&nbsp;&nbsp;&nbsp;  UNSUSPEND</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/deactivate/">&nbsp;&nbsp;&nbsp;&nbsp;  DEACTIVATE</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/update_features/">&nbsp;&nbsp;&nbsp;&nbsp;  UPDATE FEATURES</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/swap_devices/">&nbsp;&nbsp;&nbsp;&nbsp;  SWAP DEVICES</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/xfer_service_out/">&nbsp;&nbsp;&nbsp;&nbsp;  TRANSFER SERVICE OUT</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/xfer_service_in/">&nbsp;&nbsp;&nbsp;&nbsp;  TRANSFER SERVICE IN</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/xfer_service_in_and_port/">&nbsp;&nbsp;&nbsp;&nbsp;  TRANSFER SERVICE IN &amp; PORT</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/properties/">Obtaining Order Properties</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/acknowledgements/">Obtaining Acknowledgements</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/states/">Lists of States and Provinces</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/addresses/">Formatting an Address</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/approvals/">Approving an Order</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/move/">Moving a Service Assignment</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/policies/versioning/">Policies</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/policies/versioning/">Versioning Policy</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/releases/">Releases</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-3-6/">1.3.6</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-3-1/">1.3.1</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-2-1/">1.2.1</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-2-0/">1.2.0</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-1-0/">1.1.0</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/contact/">Contact</a>
+        
+         
+          
+
+            
+         
+        </div>
+      
+      </nav> 
+
+    </div><!--
+    --><div class="tg-grid__cell  tg-pad"> 
+
+      <h1 id="how-to-suspend-a-service-asset">How to Suspend a Service Asset</h1>
+
+<p><strong>This tutorial provides step-by-step instructions for creating, confirming, and submitting an order to temporarily suspend a specific service asset that is currently active.</strong></p>
+
+<p><br /></p>
+
+<h2 id="video-tutorial">Video Tutorial</h2>
+
+<p>This video explains how to create and submit an order request to suspend, unsuspend, or deactivate a service asset.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/W79c4NFhABc" frameborder="0" style="border:1px solid #777" allowfullscreen=""></iframe>
+
+<p>We also recommend browsing all of our tutorials in our Video Library at <a href="http://mobproc.tv">http://mobproc.tv</a>.</p>
+
+<p><br /></p>
+
+<h2 id="authentication">Authentication</h2>
+
+<p>This API uses the OAuth 2 standard for authentication. Specifically, it supports two grant types: <em>Implicit</em> and <em>Resource Owner Password Credentials</em>. For details regarding how to use this standard to authenticate when making your API calls, please refer to the  <a href="http://localhost:4000/concepts/security/">Security and Authentication</a> page.</p>
+
+<p><br /></p>
+
+<h2 id="step-1-build-the-request-body-that-is-required">Step 1. Build the request body that is required.</h2>
+
+<p>Next, you will need to compile the JSON that will be submitted in the request body. This JSON includes all of the data that the backend system requires to process this order.</p>
+
+<p>For a SUSPEND transaction, this JSON typically includes the following pieces:</p>
+
+<ul>
+  <li>
+    <p>Transaction type (i.e., SUSPEND).</p>
+  </li>
+  <li>
+    <p>Service asset ID for the cellular service that is to be suspended. This ID can be obtained via the <strong>/assets/service</strong> resource.</p>
+  </li>
+  <li>
+    <p>All required and optional order properties. Refer to the <a href="http://localhost:4000/tutorials/properties">Obtaining Order Properties</a> page for steps how to identify the properties that are relevant for your order. Also, refer to this same page for instructions for <a href="http://localhost:4000/tutorials/properties#choicePropertySubmittingOtherValue">submitting an “other/none of the above” value</a>.</p>
+  </li>
+</ul>
+
+<p>Here is an example of what the fully-assembled request body JSON might look like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "orderRequest": {
+    "externalOrderNumber": "AZ99087547-001",
+    "transactionType": "SUSPEND",
+    "serviceId": "38382335",
+    "properties": [
+      {
+        "groupId": "MISCELLANEOUS",
+        "fields": [
+          {
+            "id": "CONTACT_NUMBER",
+            "type": "TEXT",
+            "text": "2035559999"
+          },
+          {
+            "id": "ADDITIONAL_INSTRUCTIONS",
+            "type": "TEXT",
+            "text": "Please confirm with account holder that service has been successfully suspended."
+          },
+          {
+            "id": "SERVICE_NUMBER",
+            "type": "TEXT",
+            "text": "2035554468"
+          },
+          {
+            "id": "HOLD_SERVICE",
+            "type": "CHOICE",
+            "choice": {
+              "id": "peter.edwards.acme" 
+            }
+          },
+          {
+            "id": "PREFERRED_SUSPENSION_DATE",
+            "type": "DATE",
+            "date": "2016-12-22T00:00:00+00:00"
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="step-2-set-required-request-headers">Step 2. Set required request headers.</h2>
+
+<p>There are multiple HTTP headers that may be passed as part of your API request. They are used to confirm that the caller is authorized to make this request, along with optional filtering (when appropriate). See the <a href="http://localhost:4000/concepts/headers/">Request Headers</a> page for more information about our supported headers.</p>
+
+<h3 id="required-headers">Required Headers:</h3>
+
+<ul>
+  <li>
+    <p><strong>X-TNGO-TENANT</strong> - Used to identify the specific tenant (i.e., customer) for which the API is being called.</p>
+  </li>
+  <li>
+    <p><strong>client_id</strong> - Used to identify your client application as the one calling the API.</p>
+  </li>
+</ul>
+
+<h3 id="optional-headers">Optional Headers:</h3>
+
+<ul>
+  <li>
+    <p><strong>X-TNGO-CONTEXT-COMPANYEMPLOYEEID</strong> – The employee ID assigned by the tenant/customer (e.g., employee’s email address, etc.). Used to change context. Refer to the <a href="http://localhost:4000/concepts/actor/">Setting Context</a> page for additional instructions.</p>
+  </li>
+  <li>
+    <p><strong>X-TNGO-CONTEXT-EMPLOYEEID</strong> – The employee ID assigned by Tangoe. Used to change context. Refer to the <a href="http://localhost:4000/concepts/actor/">Setting Context</a> page for additional instructions.</p>
+  </li>
+  <li>
+    <p><strong>X-TNGO-CONTEXT-HIERARCHYID</strong> – The Tangoe-assigned ID that is used to specify the organizational hierarchy to be used for the API call.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="step-3-indicate-if-you-wish-to-obtain-an-order-confirmation">Step 3. Indicate if you wish to obtain an order confirmation.</h2>
+
+<p>Prior to submitting the order for vendor processing, you will probably want to first obtain an order confirmation. The confirmation returns all of the IDs passed in with the request body, along with the human-readable data that fully describes what was referenced by those IDs (e.g., device name, vendor, price). This is useful for API consumers who wish to present the order request back to their end user so they can verify it for accuracy.</p>
+
+<p>To obtain a confirmation, set the <strong>confirm</strong> query parameter to true.</p>
+
+<p><br /></p>
+
+<h2 id="step-4-obtain-the-order-confirmation-by-calling-the-orders-resource-via-http-post">Step 4. Obtain the order confirmation by calling the /orders resource via HTTP POST.</h2>
+
+<p>Your request, containing the JSON request body and confirm query parameter set to true, is now ready. Submit it via the HTTP POST method to the <strong>/orders</strong> resource.</p>
+
+<p>If successful, the API will return a response with a 200 HTTP status code and containing JSON that fully describes the identifiers that were submitted. This data can then be presented back to the end user for verification and correction (if necessary).</p>
+
+<p>Here is an example of what the order confirmation response might look like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "orderConfirmation": {
+    "accountHolder": {
+      "_meta": {
+        "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/employees/28673732"
+      },
+      "companyEmployeeId": "peter.edwards.acme",
+      "department": {
+        "id": "11569020385",
+        "name": "Development"
+      },
+      "email": "peter.edwards@acme.com",
+      "firstName": "Peter",
+      "id": "28673732",
+      "lastName": "Edwards",
+      "officePhone": "2038599360",
+      "status": "ACTIVE"
+    },
+    "device": {
+      "accessMethod": "CDMA_PCS",
+      "companyAssetId": "0123ABC",
+      "id": "35362361",
+      "macAddress": "90:33:20:94:33",
+      "manufacturer": {
+        "_meta": {
+          "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/manufacturers/Apple"
+        },
+        "id": "Apple",
+        "logoUrl": "https://cdn.tangoe.com/manage/images/manufacturers/Apple.gif",
+        "name": "Apple"
+      },
+      "model": "iPhone 6 Plus (16GB) gold",
+      "serialNumber": {
+        "type": "IMEI",
+        "value": "7738293847839"
+      },
+      "simId": "830002222211123"
+    },
+    "externalOrderNumber": "AZ99087547-001",
+    "properties": [
+      {
+        "fields": [
+          {
+            "id": "CONTACT_NUMBER",
+            "label": "Contact Phone Number",
+            "text": "2035559999",
+            "type": "TEXT"
+          },
+          {
+            "id": "ADDITIONAL_INSTRUCTIONS",
+            "label": "Additional Instructions",
+            "text": "Please confirm with account holder that service has been successfully suspended.",
+            "type": "TEXT"
+          },
+          {
+            "id": "SERVICE_NUMBER",
+            "label": "Service Number",
+            "text": "2035554468",
+            "type": "TEXT"
+          },
+          {
+            "choice": {
+              "id": "peter.edwards.acme"
+            },
+            "id": "HOLD_SERVICE",
+            "label": "Hold Service",
+            "type": "CHOICE"
+          },
+          {
+            "date": "2016-12-22T00:00:00Z",
+            "id": "PREFERRED_SUSPENSION_DATE",
+            "label": "Preferred Suspension Date",
+            "type": "DATE"
+          }
+        ],
+        "groupId": "MISCELLANEOUS"
+      }
+    ],
+    "region": {
+      "_meta": {
+        "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/regions/70144640"
+      },
+      "id": "70144640",
+      "name": "United States"
+    },
+    "requestedBy": {
+      "_meta": {
+        "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/employees/28673732"
+      },
+      "companyEmployeeId": "peter.edwards.acme",
+      "department": {
+        "id": "11569020385",
+        "name": "Development"
+      },
+      "email": "peter.edwards@acme.com",
+      "firstName": "Peter",
+      "id": "28673732",
+      "lastName": "Edwards",
+      "officePhone": "2038599360",
+      "status": "ACTIVE"
+    },
+    "service": {
+      "_meta": {
+        "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/assets/services/38382335"
+      },
+      "contractDates": {
+        "activated": "2014-02-15T06:00:00Z",
+        "end": "2017-02-18T06:00:00Z",
+        "lastDeviceUpgrade": "2015-02-18T06:00:00Z",
+        "start": "2015-02-18T06:00:00Z"
+      },
+      "id": "38382335",
+      "serviceNumber": "2035554468",
+      "status": "ACTIVE"
+    },
+    "transactionType": "SUSPEND"
+  },
+  "status": "SUCCESS"
+}
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="step-5-submit-order-request">Step 5. Submit order request.</h2>
+
+<p>Once the request has been confirmed, it can be re-submitted for processing via HTTP POST. Before submitting, be sure to set the confirm query parameter to false (or remove it, since the default is false).</p>
+
+<p>If the submission is successful, the API will once again return a response containing JSON with an HTTP status code of 200. This response also will include the newly-assigned order number (i.e., orderId).</p>
+
+<p>Here is an example of what the order response might look like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "order": {
+    "_meta": {
+      "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/orders/8711660"
+    },
+    "accountHolder": {
+      "_meta": {
+        "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/employees/28673732"
+      },
+      "companyEmployeeId": "peter.edwards.acme",
+      "department": {
+        "id": "11569020385",
+        "name": "Development"
+      },
+      "email": "peter.edwards@acme.com",
+      "firstName": "Peter",
+      "id": "28673732",
+      "lastName": "Edwards",
+      "officePhone": "2038599360",
+      "status": "ACTIVE"
+    },
+    "dateSubmitted": "2016-01-29T21:14:05Z",
+    "externalOrderNumber": "AZ99087547-001",
+    "orderId": "8711660",
+    "orderSegments": {
+      "items": [
+        {
+          "_meta": {
+            "hrefHistory": "https://tngo-mobproc.cloudhub.io/mobproc/v1/orders/8711660/history?orderSegment=8711661",
+            "hrefShipments": "https://tngo-mobproc.cloudhub.io/mobproc/v1/orders/8711660/shipments?orderSegment=8711661"
+          },
+          "accessories": [],
+          "features": [],
+          "orderSegmentId": "8711661",
+          "plan": {
+            "optionalFeatures": []
+          },
+          "status": "ORDER_SUBMITTED",
+          "vendor": {
+            "_meta": {
+              "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/vendors/105"
+            },
+            "id": "105",
+            "logoUrl": "https://cdn.tangoe.com/manage/images/carrier/logo_SPR.gif",
+            "name": "Sprint"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "fields": [
+          {
+            "id": "CONTACT_NUMBER",
+            "label": "Contact Phone Number",
+            "text": "2035559999",
+            "type": "TEXT"
+          },
+          {
+            "id": "ADDITIONAL_INSTRUCTIONS",
+            "label": "Additional Instructions",
+            "text": "Please confirm with account holder that service has been successfully suspended.",
+            "type": "TEXT"
+          },
+          {
+            "id": "SERVICE_NUMBER",
+            "label": "Service Number",
+            "text": "2035554468",
+            "type": "TEXT"
+          },
+          {
+            "choice": {
+              "id": "peter.edwards.acme"
+            },
+            "id": "HOLD_SERVICE",
+            "label": "Hold Service",
+            "type": "CHOICE"
+          },
+          {
+            "date": "2016-12-22T00:00:00Z",
+            "id": "PREFERRED_SUSPENSION_DATE",
+            "label": "Preferred Suspension Date",
+            "type": "DATE"
+          }
+        ],
+        "groupId": "MISCELLANEOUS"
+      }
+    ],
+    "requestedBy": {
+      "_meta": {
+        "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/employees/28673732"
+      },
+      "companyEmployeeId": "peter.edwards.acme",
+      "department": {
+        "id": "11569020385",
+        "name": "Development"
+      },
+      "email": "peter.edwards@acme.com",
+      "firstName": "Peter",
+      "id": "28673732",
+      "lastName": "Edwards",
+      "officePhone": "2038599360",
+      "status": "ACTIVE"
+    },
+    "serviceNumber": "2035554468",
+    "shipTo": {
+      "address": []
+    },
+    "status": "ORDER_SUBMITTED",
+    "transactionType": "SUSPEND"
+  },
+  "status": "SUCCESS"
+}
+</code></pre></div></div>
+<p><br /></p>
+
+
+    </div>
+  </div>  
+</div>  
+ 
+    
+    <footer class="dc-footer">
+      <p class="">&copy; Copyright 2018 Tangoe  | <a href="http://www.tangoe.com/company" target="_blank">About Tangoe</a> | <a href="https://www.tangoe.com/privacy-policy/" target="_blank">Privacy Policy</a></p>
+    </footer> 
+  </div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-101745146-1', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+</html>

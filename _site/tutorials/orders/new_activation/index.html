@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>  Tutorials - Ordering - NEW_ACTIVATION |  Tangoe Mobile Procurement API </title>
+
+  <script src="http://localhost:4000/js/jquery/jquery-2.1.4.min.js"></script>
+
+  <link rel="stylesheet" href="http://localhost:4000/css/tgUI-style.0.2.8.min.css" />
+  <link rel="stylesheet" href="http://localhost:4000/css/styles-syntax.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/styles.css" />
+
+</head>
+<body>
+
+  <div id="tg-shellMain">
+
+    <header class="dc-banner">
+     <div class="tg-display--table  tg-one-whole  tg-pad--half">
+      <div class="tg-display--table-cell"  style="width:120px;padding-top:4px">
+        <a href="http://localhost:4000"><img src="http://localhost:4000/images/TangoeLogo.png" alt="Tangoe" class="dc-logo" /></a>
+      </div><!--
+    --><div class="tg-display--table-cell  tg-text--left  tg-valign--top"><span style="color:#fff">REST APIs ~</span> Mobile Procurement (MOBPROC) v1</div>
+     </div>
+
+     <div class="dc-banner--royal  tg-text--right  tg-pad--right">
+        <div class="dc-bannerLinks">
+          <a href="https://anypoint.mulesoft.com/apiplatform/tangoe#/portals" target="_blank" class="dc-bannerLink">Developer Portal - Log In</a>
+        </div>
+      </div>
+    </header>
+
+
+
+
+<div class="dc-page" style="padding-top:0px">
+   
+  <!-- tgUI grid version -->
+  <div class="dc-pageLayout">
+    <div class="dc-pageLayout_cell--nav  tg-two-fifths">
+
+      <nav role="navigation" class="dc-navPanel">
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000">Home</a>
+        
+         
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/start/register/">Getting Started</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/start/register/">Register your App</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/start/first-call/">Make your First Call in Minutes</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/start/explore/">Test and Explore</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/concepts/security/">Using the API</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/security/">Authentication</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/security/access_tokens">Access Tokens</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/headers/">Request Headers</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/metadata/">Metadata</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/pagination/">Pagination</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/actor/">Setting Context ('the Actor')</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/uriparameters/">URI Parameters</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/errors/">Errors</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/glossary/">Glossary of Terms</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/tutorials/orders/">Tutorials</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/">Submitting an Order</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/new_activation/">&nbsp;&nbsp;&nbsp;&nbsp;  NEW ACTIVATION</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/upgrade/">&nbsp;&nbsp;&nbsp;&nbsp;  UPGRADE</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/port_number/">&nbsp;&nbsp;&nbsp;&nbsp;  PORT NUMBER</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/order_accessories/">&nbsp;&nbsp;&nbsp;&nbsp;  ORDER ACCESSORIES</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/suspend/">&nbsp;&nbsp;&nbsp;&nbsp;  SUSPEND</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/unsuspend/">&nbsp;&nbsp;&nbsp;&nbsp;  UNSUSPEND</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/deactivate/">&nbsp;&nbsp;&nbsp;&nbsp;  DEACTIVATE</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/update_features/">&nbsp;&nbsp;&nbsp;&nbsp;  UPDATE FEATURES</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/swap_devices/">&nbsp;&nbsp;&nbsp;&nbsp;  SWAP DEVICES</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/xfer_service_out/">&nbsp;&nbsp;&nbsp;&nbsp;  TRANSFER SERVICE OUT</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/xfer_service_in/">&nbsp;&nbsp;&nbsp;&nbsp;  TRANSFER SERVICE IN</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/xfer_service_in_and_port/">&nbsp;&nbsp;&nbsp;&nbsp;  TRANSFER SERVICE IN &amp; PORT</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/properties/">Obtaining Order Properties</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/acknowledgements/">Obtaining Acknowledgements</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/states/">Lists of States and Provinces</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/addresses/">Formatting an Address</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/approvals/">Approving an Order</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/move/">Moving a Service Assignment</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/policies/versioning/">Policies</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/policies/versioning/">Versioning Policy</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/releases/">Releases</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-3-6/">1.3.6</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-3-1/">1.3.1</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-2-1/">1.2.1</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-2-0/">1.2.0</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-1-0/">1.1.0</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/contact/">Contact</a>
+        
+         
+          
+
+            
+         
+        </div>
+      
+      </nav> 
+
+    </div><!--
+    --><div class="tg-grid__cell  tg-pad"> 
+
+      <h1 id="how-to-order-a-new-device-andor-service-plan">How to Order a New Device and/or Service Plan</h1>
+
+<p><strong>This tutorial provides step-by-step instructions for creating, confirming, and submitting an order to procure a new device and service plan (i.e., NEW_ACTIVATION). Please note that device accessories can also be included with this order.</strong></p>
+
+<p><br /></p>
+
+<h2 id="video-tutorial">Video Tutorial</h2>
+
+<p>This video explains how to create and submit an order request to procure a new device and service plan (often referred to as a NEW_ACTIVATION). It can also include accessories for the new device that you’re ordering. But please note that this is different than the <a href="http://localhost:4000/tutorials/orders/order_accessories/">ORDER_ACCESSORIES</a> transaction type, which is used to order accessories for an existing device asset.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jGVMTBWMgmk" frameborder="0" style="border:1px solid #777" allowfullscreen=""></iframe>
+
+<p>We also recommend browsing all of our tutorials in our Video Library at <a href="http://mobproc.tv">http://mobproc.tv</a>.</p>
+
+<p><br /></p>
+
+<h2 id="authentication">Authentication</h2>
+
+<p>This API uses the OAuth 2 standard for authentication. Specifically, it supports two grant types: <em>Implicit</em> and <em>Resource Owner Password Credentials</em>. For details regarding how to use this standard to authenticate when making your API calls, please refer to the  <a href="http://localhost:4000/concepts/security/">Authentication and Security</a> page.</p>
+
+<p><br /></p>
+
+<h2 id="step-1-build-the-request-body-that-is-required">Step 1. Build the request body that is required.</h2>
+
+<p>Next, you will need to compile the JSON that will be submitted within the request body. This JSON includes all of the data that the backend system requires to process this order.</p>
+
+<p>For a NEW_ACTIVATION transaction, this JSON typically includes the following pieces:</p>
+
+<ul>
+  <li>
+    <p>Transaction type (i.e., NEW_ACTIVATION).</p>
+  </li>
+  <li>
+    <p>Region ID for the country in which the device and/or service will be used. This ID can be obtained via the <strong>/regions</strong> resource.</p>
+  </li>
+  <li>
+    <p>The postal code for the zone in which the device and/or service will be used. (Note: this is only required when the selected region is the United States of America.)</p>
+  </li>
+  <li>Shopping cart object containing the IDs for what is being ordered (i.e., devices, plans, features, and/or accessories). These IDs can be obtained via the catalog-specific resources (i.e., <strong>/catalog/devices</strong>, <strong>/catalog/plans</strong>, <strong>/catalog/accessories</strong>).
+    <ul>
+      <li>Optional feature IDs for a specific plan can be obtained from the <strong>/catalog/plans/{id}</strong> resource.</li>
+    </ul>
+  </li>
+  <li>
+    <p>All required and optional order properties. Refer to the <a href="http://localhost:4000/tutorials/properties">Obtaining Order Properties</a> page for steps how to identify the properties that are relevant to your order. Also, refer to this same page for instructions for <a href="http://localhost:4000/tutorials/properties#choicePropertySubmittingOtherValue">submitting an “other/none of the above” value</a>.</p>
+  </li>
+  <li>Shipping information. This is required for orders that include physical items. Refer to the <a href="http://localhost:4000/tutorials/addresses">Formatting an Address</a> page for steps how to assemble the shipping components that are required to assemble a valid shipping address.</li>
+</ul>
+
+<p>Here is an example of what the fully-assembled request body JSON might look like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "orderRequest": {
+    "externalOrderNumber": "AZ99087547-001",
+    "transactionType": "NEW_ACTIVATION",
+    "regionId": "70144640",
+    "postalCode": "06477",
+    "shoppingCart": {
+      "deviceId": "9194791812",
+      "planId": "6568886494",
+      "optionalFeatureIds": ["951", "88"],
+      "accessoryIds": ["3628935899", "3628939022"]
+    },
+    "properties": [
+      {
+        "groupId": "MISCELLANEOUS",
+        "fields": [
+          {
+            "id": "CONTACT_NUMBER",
+            "type": "TEXT",
+            "text": "2035559999"
+          },
+          {
+            "id": "ADDITIONAL_INSTRUCTIONS",
+            "type": "TEXT",
+            "text": "Please ship via FedEx"
+          },
+          {
+            "id": "PREFERRED_AREA_CODE",
+            "type": "TEXT",
+            "text": "512"
+          },
+          {
+            "id": "URGENCY",
+            "type": "CHOICE",
+            "choice": {
+              "id": "2"
+            }
+          },
+          {
+            "id": "ORDER_REASON",
+            "type": "CHOICE",
+            "choice": {
+              "id": "7",
+              "otherText": "Current phone recalled for battery issue"
+            }
+          }
+        ]
+      }
+    ],
+    "shipTo": { 
+      "name": "Peter Edwards",
+      "regionId": "70144640",
+      "address": [
+        {
+          "id": "LINE_1",
+          "value": "35 Executive Blvd"
+        },
+        {
+          "id": "CITY",
+          "value": "Orange"
+        },
+        {
+          "id": "STATE",
+          "value": "CT"
+        },
+        {
+          "id": "POSTAL_CODE",
+          "value": "06477"
+        }
+      ],
+      "expedite": true
+    }
+  }
+}
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="step-2-set-required-request-headers">Step 2. Set required request headers.</h2>
+
+<p>There are multiple HTTP headers that may be passed as part of your API request. They are used to confirm that the caller is authorized to make this request, along with optional filtering (when appropriate). See the <a href="http://localhost:4000/concepts/headers/">Request Headers</a> page for more information about our supported headers.</p>
+
+<h3 id="required-headers">Required Headers:</h3>
+
+<ul>
+  <li>
+    <p><strong>X-TNGO-TENANT</strong> - Used to identify the specific tenant (i.e., customer) for which the API is being called.</p>
+  </li>
+  <li>
+    <p><strong>client_id</strong> - Used to identify your client application as the one calling the API.</p>
+  </li>
+</ul>
+
+<h3 id="optional-headers">Optional Headers:</h3>
+
+<ul>
+  <li>
+    <p><strong>X-TNGO-CONTEXT-COMPANYEMPLOYEEID</strong> – The employee ID assigned by the tenant/customer (e.g., employee’s email address, etc.). Used to change context. Refer to the <a href="http://localhost:4000/concepts/actor/">Setting Context</a> page for additional instructions.</p>
+  </li>
+  <li>
+    <p><strong>X-TNGO-CONTEXT-EMPLOYEEID</strong> – The employee ID assigned by Tangoe. Used to change context. Refer to the <a href="http://localhost:4000/concepts/actor/">Setting Context</a> page for additional instructions.</p>
+  </li>
+  <li>
+    <p><strong>X-TNGO-CONTEXT-HIERARCHYID</strong> – The Tangoe-assigned ID that is used to specify the organizational hierarchy to be used for the API call.</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="step-3-indicate-if-you-wish-to-obtain-an-order-confirmation">Step 3. Indicate if you wish to obtain an order confirmation.</h2>
+
+<p>Prior to submitting the order for vendor processing, you will probably want to first obtain an order confirmation. The confirmation returns all of the IDs passed in with the request body, along with the human-readable data that fully describes what was referenced by those IDs (e.g., device name, vendor, price). This is useful for API consumers who wish to present the order request back to their end user so they can verify it for accuracy.</p>
+
+<p>To obtain a confirmation, set the <strong>confirm</strong> query parameter to true.</p>
+
+<p><br /></p>
+
+<h2 id="step-4-obtain-the-order-confirmation-by-calling-the-orders-resource-via-http-post">Step 4. Obtain the order confirmation by calling the /orders resource via HTTP POST.</h2>
+
+<p>Your request, containing the JSON request body and confirm query parameter set to true, is now ready. Submit it via the HTTP POST method to the <strong>/orders</strong> resource.</p>
+
+<p>If successful, the API will return a response with a 200 HTTP status code and containing JSON that fully describes the identifiers that were submitted. This data can then be presented back to the end user for verification and correction (if necessary).</p>
+
+<p>Here is an example of what the order confirmation response might look like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "orderConfirmation": {
+    "accountHolder": {
+      "_meta": {
+        "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/employees/28671599"
+      },
+      "companyEmployeeId": "peter.edwards.acme",
+      "department": {
+        "id": "10652965372",
+        "name": "Accounting"
+      },
+      "email": "peter.edwards@acme.com",
+      "firstName": "Peter",
+      "id": "28671599",
+      "lastName": "Edwards",
+      "officePhone": "203-555-9999",
+      "status": "ACTIVE"
+    },
+    "costSummary": [
+      {
+        "amount": 244.99,
+        "currencyCode": "USD",
+        "recurrence": "ONETIME"
+      },
+      {
+        "amount": 538.69,
+        "currencyCode": "USD",
+        "recurrence": "MONTHLY"
+      }
+    ],
+    "externalOrderNumber": "AZ99087547-001",
+    "postalCode": "06477",
+    "properties": [
+      {
+        "fields": [
+          {
+            "id": "CONTACT_NUMBER",
+            "label": "Contact Phone Number",
+            "text": "2035559999",
+            "type": "TEXT"
+          },
+          {
+            "id": "ADDITIONAL_INSTRUCTIONS",
+            "label": "Additional Instructions",
+            "text": "Please ship via FedEx",
+            "type": "TEXT"
+          },
+          {
+            "id": "PREFERRED_AREA_CODE",
+            "label": "Preferred Area Code",
+            "text": "203",
+            "type": "TEXT"
+          },
+          {
+            "choice": {
+              "id": "1"
+            },
+            "id": "Reason",
+            "type": "CHOICE"
+          }
+        ],
+        "groupId": "MISCELLANEOUS"
+      }
+    ],
+    "region": {
+      "_meta": {
+        "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/regions/70144640"
+      },
+      "id": "70144640",
+      "name": "United States"
+    },
+    "requestedBy": {
+      "_meta": {
+        "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/employees/28671524"
+      },
+      "companyEmployeeId": "peter.edwards.acme",
+      "department": {
+        "id": "10652965372",
+        "name": "Accounting"
+      },
+      "email": "peter.edwards@acme.com",
+      "firstName": "Peter",
+      "id": "28671599",
+      "lastName": "Edwards",
+      "officePhone": "203-859-9999",
+      "status": "ACTIVE"
+    },
+    "shipTo": {
+      "address": [
+        {
+          "id": "LINE_1",
+          "label": "Address Line1",
+          "value": "35 Executive Blvd"
+        },
+        {
+          "id": "CITY",
+          "label": "City",
+          "value": "Orange"
+        },
+        {
+          "id": "STATE",
+          "label": "State",
+          "value": "CT"
+        },
+        {
+          "id": "POSTAL_CODE",
+          "label": "Zip Code",
+          "value": "06477"
+        }
+      ],
+      "expedite": true,
+      "name": "Peter Edwards",
+      "region": {
+        "_meta": {
+          "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/regions/70144640"
+        },
+        "id": "70144640",
+        "name": "United States"
+      }
+    },
+    "shoppingCart": {
+      "accessories": [
+        {
+          "_meta": {
+            "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/catalog/accessories/3628935899"
+          },
+          "id": "3628935899",
+          "imageUrl": "https://cdn.tangoe.com/manage/images/devices/VER/MICRDUALVPCF.jpg",
+          "manufacturer": {
+            "_meta": {
+              "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/manufacturers/Verizon%20Wireless"
+            },
+            "id": "Verizon Wireless",
+            "logoUrl": "https://cdn.tangoe.com/manage/images/manufacturers/VerizonWireless.gif",
+            "name": "Verizon Wireless"
+          },
+          "name": "Verizon Wireless Vehicle Charger with Dual Output (MICRDUALVPC-F)",
+          "price": {
+            "amount": 22.49,
+            "currencyCode": "USD",
+            "recurrence": "ONETIME"
+          },
+          "vendor": {
+            "_meta": {
+              "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/vendors/98"
+            },
+            "id": "98",
+            "logoUrl": "https://cdn.tangoe.com/manage/images/carrier/logo_VERZN.gif",
+            "name": "Verizon Wireless"
+          }
+        },
+        {
+          "_meta": {
+            "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/catalog/accessories/3628939022"
+          },
+          "id": "3628939022",
+          "imageUrl": "https://cdn.tangoe.com/manage/images/devices/VER/EMICUSBDTVL_F.jpg",
+          "manufacturer": {
+            "_meta": {
+              "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/manufacturers/Verizon%20Wireless"
+            },
+            "id": "Verizon Wireless",
+            "logoUrl": "https://cdn.tangoe.com/manage/images/manufacturers/VerizonWireless.gif",
+            "name": "Verizon Wireless"
+          },
+          "name": "Verizon Wireless Rapid Wall Charger with 6ft Cable for Micro USB (EMICUSBDTVL-F)",
+          "price": {
+            "amount": 22.49,
+            "currencyCode": "USD",
+            "recurrence": "ONETIME"
+          },
+          "vendor": {
+            "_meta": {
+              "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/vendors/98"
+            },
+            "id": "98",
+            "logoUrl": "https://cdn.tangoe.com/manage/images/carrier/logo_VERZN.gif",
+            "name": "Verizon Wireless"
+          }
+        }
+      ],
+      "device": {
+        "_meta": {
+          "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/catalog/devices/9194791812"
+        },
+        "id": "9194791812",
+        "imageUrl": "https://cdn.tangoe.com/manage/images/devices/VER/sam_gal_s4.jpg",
+        "manufacturer": {
+          "_meta": {
+            "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/manufacturers/Samsung"
+          },
+          "id": "Samsung",
+          "logoUrl": "https://cdn.tangoe.com/manage/images/manufacturers/Samsung.gif",
+          "name": "Samsung"
+        },
+        "name": "Samsung Galaxy S4 (16GB) - Black Mist",
+        "price": {
+          "amount": 199.99,
+          "currencyCode": "USD",
+          "recurrence": "ONETIME"
+        },
+        "vendor": {
+          "_meta": {
+            "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/vendors/98"
+          },
+          "id": "98",
+          "logoUrl": "https://cdn.tangoe.com/manage/images/carrier/logo_VERZN.gif",
+          "name": "Verizon Wireless"
+        }
+      },
+      "plan": {
+        "_meta": {
+          "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/catalog/plans/6568886494"
+        },
+        "id": "6568886494",
+        "includedFeatures": [
+          {
+            "description": "Base Package"
+          }
+        ],
+        "name": "Nationwide for Business Talk Share Plan",
+        "optionalFeatures": [
+          {
+            "description": "Unlimited Push to Talk",
+            "id": "951",
+            "price": {
+              "amount": 300.25,
+              "currencyCode": "USD",
+              "recurrence": "MONTHLY"
+            }
+          },
+          {
+            "description": "Extended Warranty",
+            "id": "88",
+            "price": {
+              "amount": 200.44,
+              "currencyCode": "USD",
+              "recurrence": "MONTHLY"
+            }
+          }
+        ],
+        "price": {
+          "amount": 38.69,
+          "currencyCode": "USD",
+          "recurrence": "MONTHLY"
+        },
+        "vendor": {
+          "_meta": {
+            "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/vendors/98"
+          },
+          "id": "98",
+          "logoUrl": "https://cdn.tangoe.com/manage/images/carrier/logo_VERZN.gif",
+          "name": "Verizon Wireless"
+        }
+      },
+      "quantity": 1
+    },
+    "transactionType": "NEW_ACTIVATION"
+  },
+  "status": "SUCCESS"
+}
+</code></pre></div></div>
+<p><br /></p>
+
+<h2 id="step-5-submit-order-request">Step 5. Submit order request.</h2>
+
+<p>Once the request has been confirmed, it can be re-submitted for processing via HTTP POST. Before submitting, be sure to set the confirm query parameter to false (or remove it, since the default is false).</p>
+
+<p>If the submission is successful, the API will once again return a response containing JSON with an HTTP status code of 200. This response also will include the newly-assigned order number (i.e., orderId).</p>
+
+<p>Here is an example of what the order response might look like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "order": {
+    "_meta": {
+      "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/orders/8710840"
+    },
+    "accountHolder": {
+      "_meta": {
+        "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/employees/28671599"
+      },
+      "companyEmployeeId": "peter.edwards.acme",
+      "department": {
+        "id": "10652965372",
+        "name": "Accounting"
+      },
+      "email": "peter.edwards@acme.com",
+      "firstName": "Peter",
+      "id": "28671599",
+      "lastName": "Edwards",
+      "officePhone": "203-859-9999",
+      "status": "ACTIVE"
+    },
+    "dateSubmitted": "2016-01-27T22:17:37Z",
+    "externalOrderNumber": "AZ99087547-001",
+    "orderId": "8710840",
+    "orderSegments": {
+      "items": [
+        {
+          "_meta": {
+            "hrefHistory": "https://tngo-mobproc.cloudhub.io/mobproc/v1/orders/8710840/history?orderSegment=8710841",
+            "hrefShipments": "https://tngo-mobproc.cloudhub.io/mobproc/v1/orders/8710840/shipments?orderSegment=8710841"
+          },
+          "accessories": [
+            {
+              "imageUrl": "https://cdn.tangoe.com/manage/images/devices/EMICUSBDTVL_F.jpg",
+              "manufacturer": {
+                "_meta": {
+                  "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/manufacturers/Verizon%20Wireless"
+                },
+                "id": "Verizon Wireless",
+                "logoUrl": "https://cdn.tangoe.com/manage/images/manufacturers/Verizon Wireless.gif",
+                "name": "Verizon Wireless"
+              },
+              "name": "Verizon Wireless Rapid Wall Charger with 6ft Cable for Micro USB (EMICUSBDTVL-F)",
+              "price": {
+                "amount": 22.49,
+                "currencyCode": "USD",
+                "recurrence": "ONETIME"
+              }
+            },
+            {
+              "imageUrl": "https://cdn.tangoe.com/manage/images/devices/MICRDUALVPCF_m.jpg",
+              "manufacturer": {
+                "_meta": {
+                  "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/manufacturers/Verizon%20Wireless"
+                },
+                "id": "Verizon Wireless",
+                "logoUrl": "https://cdn.tangoe.com/manage/images/manufacturers/Verizon Wireless.gif",
+                "name": "Verizon Wireless"
+              },
+              "name": "Verizon Wireless Vehicle Charger with Dual Output (MICRDUALVPC-F)",
+              "price": {
+                "amount": 22.49,
+                "currencyCode": "USD",
+                "recurrence": "ONETIME"
+              }
+            }
+          ],
+          "device": {
+            "imageUrl": "https://cdn.tangoe.com/manage/images/devices/sam_gal_s4_blk.jpg",
+            "manufacturer": {
+              "_meta": {
+                "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/manufacturers/Samsung"
+              },
+              "id": "Samsung",
+              "logoUrl": "https://cdn.tangoe.com/manage/images/manufacturers/Samsung.gif",
+              "name": "Samsung"
+            },
+            "name": "Samsung Galaxy S4 (16GB) - Black Mist",
+            "price": {
+              "amount": 199.99,
+              "currencyCode": "USD",
+              "recurrence": "ONETIME"
+            }
+          },
+          "features": [],
+          "orderSegmentId": "8710841",
+          "plan": {
+            "name": "Nationwide for Business Talk Share Plan",
+            "optionalFeatures": [
+              {
+                "description": "Extended Warranty",
+                "price": {
+                  "amount": 200.44,
+                  "currencyCode": "USD",
+                  "recurrence": "MONTHLY"
+                }
+              },
+              {
+                "description": "Unlimited Push to Talk",
+                "price": {
+                  "amount": 300.25,
+                  "currencyCode": "USD",
+                  "recurrence": "MONTHLY"
+                }
+              }
+            ],
+            "price": {
+              "amount": 38.69,
+              "currencyCode": "USD",
+              "recurrence": "MONTHLY"
+            }
+          },
+          "status": "ORDER_SUBMITTED",
+          "vendor": {
+            "_meta": {
+              "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/vendors/98"
+            },
+            "id": "98",
+            "logoUrl": "https://cdn.tangoe.com/manage/images/carrier/logo_VER.gif",
+            "name": "Verizon Wireless"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "fields": [
+          {
+            "id": "CONTACT_NUMBER",
+            "label": "Contact Phone Number",
+            "text": "2035559360",
+            "type": "TEXT"
+          },
+          {
+            "id": "ADDITIONAL_INSTRUCTIONS",
+            "label": "Additional Instructions",
+            "text": "Please ship via FedEx",
+            "type": "TEXT"
+          },
+          {
+            "id": "PREFERRED_AREA_CODE",
+            "label": "Preferred Area Code",
+            "text": "512",
+            "type": "TEXT"
+          },
+          {
+            "choice": {
+              "id": "1"
+            },
+            "id": "Reason",
+            "type": "CHOICE"
+          }
+        ],
+        "groupId": "MISCELLANEOUS"
+      }
+    ],
+    "requestedBy": {
+      "_meta": {
+        "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/employees/28671599"
+      },
+      "companyEmployeeId": "peter.edwards.acme",
+      "department": {
+        "id": "10652965372",
+        "name": "Accounting"
+      },
+      "email": "peter.edwards@acme.com",
+      "firstName": "Peter",
+      "id": "28671599",
+      "lastName": "Edwards",
+      "officePhone": "203-859-9999",
+      "status": "ACTIVE"
+    },
+    "shipTo": {
+      "address": [
+        {
+          "id": "LINE_1",
+          "label": "Address Line1",
+          "value": "35 Executive Blvd"
+        },
+        {
+          "id": "CITY",
+          "label": "City",
+          "value": "Orange"
+        },
+        {
+          "id": "STATE",
+          "label": "State",
+          "value": "CT"
+        },
+        {
+          "id": "POSTAL_CODE",
+          "label": "Zip Code",
+          "value": "06477"
+        }
+      ],
+      "expedite": true,
+      "name": "Peter Edwards",
+      "region": {
+        "_meta": {
+          "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/regions/70144640"
+        },
+        "id": "70144640",
+        "name": "United States"
+      }
+    },
+    "status": "ORDER_SUBMITTED",
+    "transactionType": "NEW_ACTIVATION"
+  },
+  "status": "SUCCESS"
+}
+  
+</code></pre></div></div>
+<p><br /></p>
+
+
+
+    </div>
+  </div>  
+</div>  
+ 
+    
+    <footer class="dc-footer">
+      <p class="">&copy; Copyright 2018 Tangoe  | <a href="http://www.tangoe.com/company" target="_blank">About Tangoe</a> | <a href="https://www.tangoe.com/privacy-policy/" target="_blank">Privacy Policy</a></p>
+    </footer> 
+  </div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-101745146-1', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>  Obtaining Order Properties |  Tangoe Mobile Procurement API </title>
+
+  <script src="http://localhost:4000/js/jquery/jquery-2.1.4.min.js"></script>
+
+  <link rel="stylesheet" href="http://localhost:4000/css/tgUI-style.0.2.8.min.css" />
+  <link rel="stylesheet" href="http://localhost:4000/css/styles-syntax.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/styles.css" />
+
+</head>
+<body>
+
+  <div id="tg-shellMain">
+
+    <header class="dc-banner">
+     <div class="tg-display--table  tg-one-whole  tg-pad--half">
+      <div class="tg-display--table-cell"  style="width:120px;padding-top:4px">
+        <a href="http://localhost:4000"><img src="http://localhost:4000/images/TangoeLogo.png" alt="Tangoe" class="dc-logo" /></a>
+      </div><!--
+    --><div class="tg-display--table-cell  tg-text--left  tg-valign--top"><span style="color:#fff">REST APIs ~</span> Mobile Procurement (MOBPROC) v1</div>
+     </div>
+
+     <div class="dc-banner--royal  tg-text--right  tg-pad--right">
+        <div class="dc-bannerLinks">
+          <a href="https://anypoint.mulesoft.com/apiplatform/tangoe#/portals" target="_blank" class="dc-bannerLink">Developer Portal - Log In</a>
+        </div>
+      </div>
+    </header>
+
+
+
+
+<div class="dc-page" style="padding-top:0px">
+   
+  <!-- tgUI grid version -->
+  <div class="dc-pageLayout">
+    <div class="dc-pageLayout_cell--nav  tg-two-fifths">
+
+      <nav role="navigation" class="dc-navPanel">
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000">Home</a>
+        
+         
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/start/register/">Getting Started</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/start/register/">Register your App</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/start/first-call/">Make your First Call in Minutes</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/start/explore/">Test and Explore</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/concepts/security/">Using the API</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/security/">Authentication</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/security/access_tokens">Access Tokens</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/headers/">Request Headers</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/metadata/">Metadata</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/pagination/">Pagination</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/actor/">Setting Context ('the Actor')</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/uriparameters/">URI Parameters</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/errors/">Errors</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/concepts/glossary/">Glossary of Terms</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/tutorials/orders/">Tutorials</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/">Submitting an Order</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/new_activation/">&nbsp;&nbsp;&nbsp;&nbsp;  NEW ACTIVATION</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/upgrade/">&nbsp;&nbsp;&nbsp;&nbsp;  UPGRADE</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/port_number/">&nbsp;&nbsp;&nbsp;&nbsp;  PORT NUMBER</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/order_accessories/">&nbsp;&nbsp;&nbsp;&nbsp;  ORDER ACCESSORIES</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/suspend/">&nbsp;&nbsp;&nbsp;&nbsp;  SUSPEND</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/unsuspend/">&nbsp;&nbsp;&nbsp;&nbsp;  UNSUSPEND</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/deactivate/">&nbsp;&nbsp;&nbsp;&nbsp;  DEACTIVATE</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/update_features/">&nbsp;&nbsp;&nbsp;&nbsp;  UPDATE FEATURES</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/swap_devices/">&nbsp;&nbsp;&nbsp;&nbsp;  SWAP DEVICES</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/xfer_service_out/">&nbsp;&nbsp;&nbsp;&nbsp;  TRANSFER SERVICE OUT</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/xfer_service_in/">&nbsp;&nbsp;&nbsp;&nbsp;  TRANSFER SERVICE IN</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/xfer_service_in_and_port/">&nbsp;&nbsp;&nbsp;&nbsp;  TRANSFER SERVICE IN &amp; PORT</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/properties/">Obtaining Order Properties</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/acknowledgements/">Obtaining Acknowledgements</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/states/">Lists of States and Provinces</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/addresses/">Formatting an Address</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/orders/approvals/">Approving an Order</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/tutorials/move/">Moving a Service Assignment</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/policies/versioning/">Policies</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/policies/versioning/">Versioning Policy</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/releases/">Releases</a>
+        
+         
+          
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-3-6/">1.3.6</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-3-1/">1.3.1</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-2-1/">1.2.1</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-2-0/">1.2.0</a>
+              
+              </div>
+
+
+            
+
+
+              
+                          
+              
+
+              <div class="dc-navOption  dc-navOption__subone">
+              
+              <a href="http://localhost:4000/releases/1-1-0/">1.1.0</a>
+              
+              </div>
+
+
+            
+
+
+              
+            
+          
+
+            
+         
+        </div>
+      
+        
+        
+
+        <div class="dc-navOption  dc-navOption__top">
+        
+          <a href="http://localhost:4000/contact/">Contact</a>
+        
+         
+          
+
+            
+         
+        </div>
+      
+      </nav> 
+
+    </div><!--
+    --><div class="tg-grid__cell  tg-pad"> 
+
+      <h1 id="obtaining-order-properties">Obtaining Order Properties</h1>
+
+<p><strong>This tutorial describes the steps for obtaining the required (and optional) properties that are supported by the vendor who will be fulfilling your order.</strong></p>
+
+<p>Order properties are additional pieces of information about your order. They are not used by the API to process the order. But rather, they are passed on to the third-party vendor who will be fulfilling your order. Some of these properties may be required to be populated in order for your order to be accepted.</p>
+
+<p><br /></p>
+
+<h2 id="video-tutorial">Video Tutorial</h2>
+
+<p>This video explains how to obtain the order properties that need to be passed when submitting any order request.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QBHmgTDW6-4" frameborder="0" style="border:1px solid #777" allowfullscreen=""></iframe>
+
+<p>We also recommend browsing all of our tutorials in our Video Library at <a href="http://mobproc.tv">http://mobproc.tv</a>.</p>
+
+<p><br /></p>
+
+<h2 id="the-ordersproperties-resource">The /orders/properties resource</h2>
+
+<p>An API call can be made to the <strong>/orders/properties</strong> resource to obtain the properties. The specific properties returned are determined based on the order transaction type and  vendor who will be fulfilling the order.</p>
+
+<p>When making this API call, you must always set the <strong>transactionType</strong> query parameter (e.g., NEW_ACTIVATION, UPGRADE, SUSPEND, etc.). You also must also identify the vendor by passing either one of the two following query parameters:</p>
+
+<ul>
+  <li>
+    <p><strong>vendor</strong> – The ID of the vendor who will be fulfilling the order. This ID can be obtained from many resources (e.g., /vendors, /catalog/plans, etc.).</p>
+  </li>
+  <li>
+    <p><strong>service</strong> – The ID of the service asset for which the order is being executed, if applicable. The backend system will look up the ID of the vendor who is associated with the service asset.</p>
+  </li>
+</ul>
+
+<p>Here is an illustration of what the order properties response could look like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "properties": {
+    "_meta": {
+      "href": "https://tngo-mobproc.cloudhub.io/mobproc/v1/orders/properties?transactionType=NEW_ACTIVATION&amp;vendor=98"
+    },
+    "items": [
+      {
+        "fields": [
+          {
+            "id": "PREFERRED_AREA_CODE",
+            "label": "Preferred Area Code",
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "TEXT",
+            "validation": "REQUIRED"
+          },
+          {
+            "id": "CONTACT_NUMBER",
+            "label": "Contact Phone Number",
+            "maxLength": 20,
+            "minLength": 0,
+            "text": "2038599360",
+            "type": "TEXT",
+            "validation": "REQUIRED"
+          },
+          {
+            "id": "CONTACT_NUMBER_EXT",
+            "label": "Ext",
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "TEXT",
+            "validation": "OPTIONAL"
+          },
+          {
+            "id": "ADDITIONAL_INSTRUCTIONS",
+            "label": "Additional Instructions",
+            "maxLength": 4000,
+            "minLength": 0,
+            "type": "TEXT",
+            "validation": "OPTIONAL"
+          },
+          {
+            "choices": [
+              {
+                "id": "19",
+                "isOther": false,
+                "label": "Broken Device"
+              },
+              {
+                "id": "2",
+                "isOther": false,
+                "label": "Job required upgrade to data device"
+              },
+              ...
+            ],
+            "id": "Reason",
+            "label": "Reason",
+            "type": "CHOICE",
+            "validation": "REQUIRED"
+          }
+        ],
+        "groupId": "MISCELLANEOUS"
+      }
+    ]
+  }
+}
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="contents-of-an-order-property">Contents of an Order Property</h2>
+
+<p>An individual order property contains the following required elements:</p>
+
+<ul>
+  <li>
+    <p><strong>id</strong> – The unique ID identifying a specific order property.</p>
+  </li>
+  <li>
+    <p><strong>label</strong> – A descriptive label that is suitable for displaying to an end user.</p>
+  </li>
+  <li><strong>type</strong> – Indicates the type of data to which the value should be set:
+    <ul>
+      <li><em>TEXT</em>: A string.</li>
+      <li><em>DATE</em>: A date. (Note: the “pattern” element may be set to indicate the accepted format, e.g., ISO 8601, etc.)</li>
+      <li><em>CHOICE</em>: An ID of a single option chosen from an array of choice options.</li>
+    </ul>
+  </li>
+  <li><strong>validation</strong> – Indicates whether or not the property is required by the vendor.</li>
+</ul>
+
+<p>They can also contain any of the following optional elements:</p>
+
+<ul>
+  <li>
+    <p><strong>maxLength</strong> – The maximum number of characters to which this property can be set.</p>
+  </li>
+  <li>
+    <p><strong>minLength</strong> – The minimum number of characters to which this property must be set.</p>
+  </li>
+  <li>
+    <p><strong>pattern</strong> – A description of the pattern that the value should match (e.g, “mm/dd/yyyy”). This can be displayed to an end user as a hint describing what the properties value should look like.</p>
+  </li>
+  <li>
+    <p><strong>regEx</strong> – A regular expression pattern that can be used to validate the value to which the property is set.</p>
+  </li>
+</ul>
+
+<p><a name="choiceProperty"></a><br /></p>
+
+<h2 id="the-choice-property-type">The CHOICE Property Type</h2>
+
+<p>The CHOICE type is used to model properties that only accept a value from a defined list of options. An API consumer might use this property to surface a dropdown list in their user interface.</p>
+
+<p>CHOICE properties include an array named <strong>choices</strong> that contains the acceptable options. Each option in the array contains the following elements:</p>
+
+<ul>
+  <li>
+    <p><strong>id</strong> – The unique ID identifying this specific option.</p>
+  </li>
+  <li>
+    <p><strong>label</strong> –  A descriptive label that is suitable for displaying to an end user.</p>
+  </li>
+  <li>
+    <p><strong>isOther</strong> – A boolean indicating if this specific option is used to select “other” (i.e., “none of the above”). There should only be one option in the array that has <strong>isOther</strong> set to true. Furthermore, this element can be helpful to the user interface for triggering another event, such as revealing a text field. This field can be used by an end user to describe a choice that is different from the ones found in a dropdown list.</p>
+  </li>
+</ul>
+
+<p><a name="choicePropertySubmittingOtherValue"></a><br /></p>
+
+<h2 id="choice-properties-submitting-an-othernone-of-the-above-value">CHOICE Properties: Submitting an “Other/None of the Above” Value</h2>
+
+<p>As mentioned above, a list of CHOICE properties (i.e., type = CHOICE) may include one option that allows your end user to indicate that they wish to select a response that is different than the ones currently offered. In other words, they wish to choose “none of the above.” This “other/none of the above” option is indicated by the <strong>isOther</strong> property being set to true.</p>
+
+<p>An example of this “other” choice in action would be if the consuming application presents a list of checkboxes for their end user to identify their current cellular carrier, with the final choice being “none of the above.”</p>
+
+<p>However, simply choosing “none of the above” may be insufficient. The application may need to know what specific other choice the end user would prefer to submit. In this case, the user interface may want to reveal an input field for this when this “other/none of the above” option was checked. The value entered can then be passed via the “otherText” property as part of the POST to the <strong>/orders</strong> endpoint.</p>
+
+<p>The following is an example of what that portion of the POST request might look like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "orderRequest": {
+    ...
+    "properties": [
+      {
+        "groupId": "MISCELLANEOUS",
+        "fields": [
+          {
+            "id": "CONTACT_NUMBER",
+            "type": "TEXT",
+            "text": "2035559999"
+          },
+          {
+            "id": "Carrier",
+            "type": "CHOICE",
+            "choice": {
+              "id": "1",
+              "otherText": "Allied Cellular"
+            }
+          }
+        ]
+      }
+    ]
+    ...
+  }
+}
+</code></pre></div></div>
+
+
+
+    </div>
+  </div>  
+</div>  
+ 
+    
+    <footer class="dc-footer">
+      <p class="">&copy; Copyright 2018 Tangoe  | <a href="http://www.tangoe.com/company" target="_blank">About Tangoe</a> | <a href="https://www.tangoe.com/privacy-policy/" target="_blank">Privacy Policy</a></p>
+    </footer> 
+  </div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-101745146-1', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+</html>

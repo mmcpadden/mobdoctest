@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<!-- /* UPDATED */ -->
+   <meta name="viewport" content="width=device-width"/>
+
+
+   <title>Tangoe Authentication Login</title>
+
+   <!--[if lt IE 9]>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
+   <![endif]-->
+
+   <style type="text/css">
+    body {
+      margin: 0px;
+      padding:0px; 
+   /*
+      font-size: 13px;
+   */
+      font-family: tahoma, helvetica, arial, sans-sarif;
+      color: #101D49;
+    }
+
+/* UPDATED */
+    li {
+      list-style-type: none;
+      padding-bottom: 12px;
+    }    
+
+    .lg-bg { 
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      background-color: #C2CAD6;
+      background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #C2CAD6));
+      background-image: -webkit-linear-gradient(top, #ffffff, #C2CAD6);
+      background-image: -moz-linear-gradient(top, #ffffff, #C2CAD6);
+      background-image: -o-linear-gradient(top, #ffffff, #C2CAD6);
+      background-image: -ms-linear-gradient(top, #ffffff, #C2CAD6);
+      background-image: linear-gradient(top, #ffffff, #C2CAD6);
+      background-repeat: repeat-x;
+      *zoom: 1;
+      filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFC2CAD6'); 
+    }
+
+/* UPDATED */
+    .lg-form {
+      margin: auto;
+      max-width: 90%;
+    }
+
+/* UPDATED */
+    .lg-instructions {
+      font-weight: normal;      
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .lg-fieldSet{
+      margin-top: 1px;
+      background-color: #F3F4F7;
+      padding: 10px;
+    }
+
+    .lg-inputLabel {
+      padding-right: 2px;
+    }
+    .lg-inputField {
+      border: 1px solid #eee;
+      background-color: transparent;
+      border: 1px solid #101D49;
+      border-radius: 2px;
+      padding: 3px;
+    }
+    .lg-inputField:focus {
+      border: 1px solid #0032A0;
+      -webkit-transition: border-color 1.25s, -webkit-transform 1.25s;
+      transition: border-color 1.25, transform 1.25s;
+    }
+
+/* UPDATED */
+    .lg-button--submit,
+    .lg-button--submit:link,
+    .lg-button--submit:visited {
+      font-size: 1.2rem;
+      padding: 4px 18px;
+
+      font-weight: lighter;
+      border: 1px solid #101D49;
+      border-radius: 2px;
+      color: #FFF;
+      
+      background-color: #0032A0;
+      -webkit-transition: background-color 1.2s, -webkit-transform 1.2s;
+      transition: background-color 1.2s, transform 1.2s;
+    }
+    .lg-button--submit:hover,
+    .lg-button--submit:active {
+      border: 1px solid #0032A0;
+      color: #0032A0;
+      background-color: #fff;
+      -webkit-transition: background-color 1.5s, -webkit-transform 1.5s;
+      transition: background-color 1.5s, transform 1.5s;
+    }
+
+
+/* UPDATED */
+    a.lg-link,
+    a.lg-link:link,
+    a.lg-link:visited {       
+      font-size: .9rem;
+      color: #444;
+      text-decoration: none;
+    }
+    a.lg-link:hover,
+    a.lg-link:active  {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    .lg-align--center {
+      text-align: center;
+    }
+    .lg-space--top {
+      margin-top: 24px !important;
+    }
+ /* UPDATED */   
+    .lg-space--eighth--top {
+      margin-top: 3px !important;
+    }
+    .lg-space--quarter--top {
+      margin-top: 6px !important;
+    }
+
+    .lg-space--half--top {
+      margin-top: 12px !important;
+    }
+    .lg-space--double--top {
+      margin-top: 48px !important;
+    }
+   </style>
+ </head>
+
+ <body class="lg-bg">
+
+<!-- /* UPDATED */ -->
+  <div class="lg-form">
+    <div class="lg-align--center  lg-space--half--top">
+      <img width="125" height="43" alt="Tangoe" src="data:image/png;base64,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" /></div>
+
+<!-- /* UPDATED */ -->
+    <h3 class="lg-instructions  lg-space--half--top  lg-align--center">Do you authorize <br/><strong>MobileProcurementAPI_DeveloperPortal</strong><br/> to access your Tangoe account?</h3>
+  </div>  
+<!-- /* UPDATED */ -->
+
+
+    <form id="login-form" method="post" class="lg-align--center  lg-space--top">
+
+      <div class="lg-fieldSet">
+        <label for="username" class="lg-inputLabel">Username</label> 
+        <input id="username" name="username" type="text" class="lg-inputField" />
+      </div>
+
+      <div class="lg-fieldSet">
+        <label for="password" class="lg-inputLabel">Password</label>
+        <input id="password" name="password" type="password" class="lg-inputField" />
+      </div>
+
+      <div class="lg-align--center  lg-space--half--top">
+        <input type="submit" value="Login and Authorize" class="lg-button--submit " /> 
+<!-- /* UPDATED */ -->        
+        <div class="lg-space--eighth--top"><a class="lg-link" href="$REDIRECT_URI?error=access_denied&amp;error_description=User%20denied%20access">Cancel</a></p>
+      </div>
+
+<!-- /* UPDATED */ -->
+      <div class="lg-space--quarter--top">
+        <p>This application will have the following rights:</p>
+        <ul>
+          <li>MOBILE_PROCUREMENT_API - Duis molestie egestas semper. Nunc ultrices ipsum sed enim laoreet convallis. Nulla rhoncus fermentum magna nec commodo.</li>
+          <li>SAMPLE_SCOPE_2 - Nullam sit amet vulputate elit.</li>
+          <li>SAMPLE_SCOPE_3 - Suspendisse eu suscipit metus, in pulvinar diam. Suspendisse vel augue blandit, molestie diam sit amet, congue massa. Fusce porttitor neque eget tortor scelerisque, vitae ornare urna ullamcorper. </li>
+        </ul>
+      </div>
+<!-- /* UPDATED */ -->
+
+      <input type="hidden" name="client_id" value="$CLIENT_ID" />
+      <input type="hidden" name="response_type" value="$RESPONSE_TYPE" />
+      <input type="hidden" name="redirect_uri" value="$REDIRECT_URI" />
+      <input type="hidden" name="scope" value="$!SCOPE" />
+    </form>
+
+ </body>
+</html>
