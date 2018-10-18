@@ -1,0 +1,318 @@
+.DEBUGG { border: 1px dashed red; }
+
+/* ********************* */
+/* COLORS */
+/* 
+dark blue: 		#051C48;
+royal blue: 	#0032A0;
+yellow: 		  #F3E600;
+*/
+/* ********************* */
+
+
+body {
+  font-size: 15px;
+  color: #000;
+}
+
+
+h1 {
+	font-family: 'linotype_helvetica_thin', 'open_sansbold', 'open_sansregular',  'linotype_helvetica_bold', arial, sans-serif;
+	font-size: 1.75rem;
+	color: #0032A0;
+}
+
+h2 {
+	font-family: 'linotype_helvetica_roman', 'open_sanssemibold', 'open_sansbold', 'open_sansregular', arial, sans-serif;
+	color: #051c48;
+}
+
+h3 {
+	font-family: 'linotype_helvetica_bold', 'open_sanssemibold', 'open_sansbold', 'open_sansregular', arial, sans-serif;
+	color: #000;
+}
+
+a {
+	color: #03F;
+	text-decoration: none;
+}
+a:active,
+a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #444;
+}
+
+th {
+  padding: 3px 8px;
+  border: 1px solid #444;
+  color: #fff;
+  background-color: #444;
+  font-style: normal;
+  text-align: left;
+}
+
+td {
+  padding: 5px 8px 2px 8px;
+  border: 1px solid #777;  
+}
+
+
+
+
+.highlight {
+  margin-bottom: 12px;
+  padding: 15px;
+/*	border: 1px dotted #999; */
+	border-radius: 4px;
+}
+
+
+.dc-page {
+	width: 100%;
+	border: 0px;
+  overflow: auto;
+}
+
+.dc-pageLayout {
+	display: flex;
+	flex-direction: row;
+}
+.dc-pageLayout_cell--nav {
+	flex-basis: 222px;   /* 222px; */
+	background-color: #fff;
+}
+
+
+
+
+/* navigation */
+.dc-navPanel {
+	margin-top: 30px;
+	border-right: 1px solid #ddd;
+	font-size: 14px;
+}
+
+.dc-navOption {	
+}
+
+.dc-navOption__top {
+	margin-top: 22px;
+	padding: 0px;
+}
+.dc-navOption__top > a {
+	padding: 6px 10px; 
+  border-bottom: 1px solid #DDD;
+  font-weight: bold;
+	color: #777; 
+	text-decoration: none;	
+	display: block;
+}
+
+.dc-navOption__subone {	
+	padding: 0px;
+	border: 0px;
+  font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;	
+}
+.dc-navOption__subone > a {
+	padding: 4px 7px 3px 11px;
+  color: #666;
+	text-decoration: none;	
+	display: block;
+}
+
+.dc-navOption__top:hover, 
+.dc-navOption__subone:hover {	
+}
+
+.dc-navOption__top > a:hover, 
+.dc-navOption__subone > a:hover {
+	color: #002BB8;
+	text-decoration: none;
+	background-color: #E3E3E3;
+	display: block;
+}
+
+a.dc-navOption__active {
+	color: #333;
+	background-color: #F5E500;
+}
+
+
+
+/* top banner */
+.dc-logo {
+	width: 85px;
+}
+
+.dc-banner {
+	background-color: #00000A;
+	color:  #F5E500; 
+	font-family: 'linotype_helvetica_thin', arial, sans-serif;
+	font-size: 2em;
+}
+.dc-banner--royal {
+	padding: 5px 10px;
+  border-bottom: 4px solid #F5E500;
+  background-color: #0032A0;
+	color: #fff;
+	font-family: 'linotype_helvetica_bold', arial, sans-serif;
+	font-family: arial, sans-serif;
+	font-size: 12px;	
+}
+
+
+.dc-bannerLinks {
+  padding: 4px 1px 2px 1px;
+}
+.dc-bannerLink,
+.dc-bannerLink:visited {
+  margin: auto auto;  
+  padding: 3px 9px;
+  border: 1px solid #fff; 
+  border-radius: 0px;
+  color: #fff;
+  background-color: transparent;  
+  font-family: helvetica, arial, sans-serif;
+  font-size: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.dc-bannerLink:hover,
+.dc-bannerLink:active {  
+  border: 1px solid #051C48; 
+  color: #000;
+  background-color: #f3E600;  
+  text-decoration: none;
+}
+
+
+
+/* footer */
+.dc-footer,
+.dc-footer a {	
+	color: #eee;
+	font-size: 10px;
+}
+.dc-footer {	
+	margin-top: 0px;
+	padding: 7px;
+	border-top: 1px solid #0032A0;
+	background-color: #00000A;
+}
+
+
+
+/* Home page */
+.dc-home__background {
+  background: #00000A;
+  background-color:#00000A; 
+  background-image:url('http://www.tangoe.com/wp-content/uploads/2015/12/1.2_Telecom1.jpg');
+  background-size: cover;
+}
+
+/* FEATURE BLOCK CLASSES */
+.dc-featureBlock {
+  margin-top: 50px;
+  background-color: #0032A0;
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;  
+}
+.dv-feature { 
+  margin: 15px 5px;  
+  padding-bottom: 18px;
+  border: 1px solid  #051C48; 
+  border-radius: 2px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.dv-feature h3 {  
+  margin-top: 12px;
+  font-family: verdana, helvetica, arial, sans-serif;
+  font-size: 24px;
+  font-weight: normal;
+  color: #FFFA99; 
+}
+.dv-feature p {
+  min-width: 120px;
+  max-width: 220px;
+  padding: 20px 20px 5px 20px;
+  line-height: 15px;  
+  color: #eee;
+  font-size: 11px;  
+}
+.dv-feature__button,
+.dv-feature__button:visited {
+  margin: auto auto;  
+  padding: 6px 14px;
+  border: 1px solid #FFF;
+  border-radius: 0px;
+  color: #FFF;
+  background-color: #0032A0;  
+  font-family: 'linotype_helvetica_romanX', 'open_sansboldX', 'open_sansregularX',  'linotype_helvetica_boldX', verdana, helvetica, arial, sans-serif;
+  font-size: 17px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.dv-feature__button:hover,
+.dv-feature__button:active {  
+  color: #000;
+  background-color: #f3E600;
+  border: 1px solid #f3E600; 
+  text-decoration: none;
+}
+
+H2.block-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+}
+
+
+/* HERO BLOCK CLASSES */
+.dv-hero__background {
+  padding: 20px;
+  color: #FFF;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.dv-hero__headline {
+  font-family: 'linotype_helvetica_thin', 'open_sanssemibold', 'open_sansbold', 'open_sansregular', arial, sans-serif;
+  font-size: 2.75rem; 
+  color: #FFF;
+}
+.dv-hero__headline--accent {
+  color: #F5E500;	
+}
+
+.dv-hero__button,
+.dv-hero__button:visited {
+  position: relative;
+  margin: 5px  0px; 
+  padding: 7px 17px;
+  border: 1px solid #f3E600; 
+  color: #000;
+  background-color: #f3E600;  
+  font-weight: bold;
+  font-size: 17px;
+  text-decoration: none;
+  cursor: pointer;  
+}
+.dv-hero__button:hover,
+.dv-hero__button:active {
+  border: 1px solid #FFF;
+  color: #FFF;
+  background-color: transparent;  
+  text-decoration: none;
+}

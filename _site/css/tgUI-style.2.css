@@ -1,0 +1,1727 @@
+.tg-clearfix {
+  *zoom: 1;
+}
+.tg-clearfix:before, .tg-clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.tg-clearfix:after {
+  clear: both;
+}
+
+/* Text Alignment
+
+<h1>.tg-text--[position modifier]</h1>
+
+.tg-text--left			- Align inline contents to the left edge of the line box.
+.tg-text--center		- Align inline contents are centered within the line box.
+.tg-text--right			- Align inline contents to the right edge of the line box.
+
+Markup: 
+<div class="{$modifiers}" style="width:300px;border:1px dashed #bbb;padding:5px">
+    <p>This text is aligned using a tgUI class</p>
+</div>
+
+Styleguide 400.2.1
+
+*/
+.tg-text--left {
+  text-align: left  !important;
+}
+
+.tg-text--center {
+  text-align: center !important;
+}
+
+.tg-text--right {
+  text-align: right !important;
+}
+
+/* Vertical Alignment
+
+<h1>.tg-valign--[position modifier]</h1>
+
+.tg-valign--top				- Align the top of the element and its descendants with the top of the entire line.
+.tg-valign--middle			- Aligns the middle of the element with the middle of lowercase letters in the parent.
+.tg-valign--bottom			- Align the bottom of the element and its descendants with the bottom of the entire line.
+.tg-valign--baseline		- Aligns the baseline of the element with the baseline of its parent.
+.tg-valign--sub				- Aligns the baseline of the element with the subscript-baseline of its parent.
+.tg-valign--super			- Aligns the baseline of the element with the superscript-baseline of its parent.
+
+Markup: 
+<div  style="width:110px;border:1px solid #666;white-space:nowrap;">
+	<img class="{$modifiers}" src="http://placehold.it/20x20"/>
+  	<img class="{$modifiers}" src="http://placehold.it/30x30"/>
+  	<img class="{$modifiers}" src="http://placehold.it/50x50"/> 
+</div>
+
+Styleguide 110.3.1
+
+*/
+.tg-valign--top {
+  vertical-align: top      !important;
+}
+
+.tg-valign--middle {
+  vertical-align: middle   !important;
+}
+
+.tg-valign--bottom {
+  vertical-align: bottom   !important;
+}
+
+.tg-valign--baseline {
+  vertical-align: baseline !important;
+}
+
+.tg-valign--sub {
+  vertical-align: sub      !important;
+}
+
+.tg-valign--super {
+  vertical-align: super    !important;
+}
+
+/* Display
+
+<h1>.tg-display--[modifier]</h1>
+
+Overrides the default type of rendering box used for an element.
+
+Markup: 
+<div class="tg-display {$modifiers}">[not a visual element]</div>
+
+.tg-display--inline 		 - Generates one or more inline element boxes.
+.tg-display--block  		 - Generates a block element box.
+.tg-display--inline-block    - Generates a block element box that will be flowed with surrounding content as if it were a single inline box.
+
+Styleguide 115.1.1
+
+*/
+.tg-display--inline {
+  display: inline !important;
+}
+
+.tg-display--block {
+  display: block !important;
+}
+
+.tg-display--inline-block {
+  display: inline-block !important;
+}
+
+/* No Display 
+
+<h1>.tg-display--none</h1>
+
+Turns off the display of the element and all of its descendants. Moreover, it removes it from the layout flow.
+
+Markup: 
+<div class="tg-display--none"></div>
+
+Styleguide 115.1.2
+
+*/
+.tg-display--none {
+  display: none !important;
+}
+
+/* Table Display 
+
+<h1>.tg-display--table</h1>
+
+Overrides the default type of rendering box used for a container to render as a table. Always used in conjunction with at least one child element with the tg-display--table-cell class applied to it.
+
+Markup: 
+<div class="tg-display--table">
+	<div class="tg-display--table-cell">Cell A</div>
+	<div class="tg-display--table-cell">Cell B</div>
+	<div class="tg-display--table-cell">Cell C</div>
+</div>
+
+Styleguide 115.2.1
+
+*/
+.tg-display--table {
+  display: table !important;
+}
+
+/* Table Cell Display 
+
+<h1>.tg-display--table-cell</h1>
+
+Overrides the default type of rendering box used for a container element that is a decendant of an element with the tg-display--table class applied to it. Causes the element to behave like a &lt;TD&gt;.
+
+Markup: 
+<div class="tg-display--table">
+	<div class="tg-display--table-cell">Cell A</div>
+	<div class="tg-display--table-cell">Cell B</div>
+	<div class="tg-display--table-cell">Cell C</div>
+</div>
+
+Styleguide 115.2.2
+
+*/
+.tg-display--table-cell {
+  display: table-cell !important;
+}
+
+/* Float
+
+<h1>.tg-float--[modifier]</h1>
+
+.tg-float--right		- Move an element to the right side of its container.
+.tg-float--left			- Move an element to the left side of its container.
+.tg-float--none			- Element must not float (i.e., render it in its normal, default flow).
+
+Markup: 
+<div style="width:300px;height: 40px; border:1px dashed #bbb;padding:5px">
+    <a href="#" class="tgIMG-icon--logout  {$modifiers}  tg-clearfix">&nbsp;</a>
+</div>
+
+Styleguide 110.1.1
+
+*/
+.tg-float--right {
+  float: right !important;
+}
+
+.tg-float--left {
+  float: left !important;
+}
+
+.tg-float--none {
+  float: none !important;
+}
+
+/* Margin
+
+<h1>.tg-space</h1>
+
+Adds unit(s) of margin -- or a fraction of a unit -- to one or more sides of an element.
+
+<div class="tgKSS-callout">
+  <span class="tgKSS-callout-heading">Breakpoint-specific triggers</span> 
+  <p>Classes in this section can be selectively invoked for any combination of available breakpoints: TABLET, PHONE, WIDE. For additional explanation of breakpoint-specific triggers for classes and how to invoke them, please refer to the <a target="_blank" href="https://github.com/tgui/tgUI/wiki/CSS-Classes-with-Breakpoint-Targeting-Support">wiki</a>. (Please note: must be logged into GitHub in order access wiki.)
+</div>
+
+.tg-space             			- Sets margin to a one-whole spacing unit on all sides.
+.tg-space--eighth        		- Sets margin to a one-eighth spacing unit on all sides.
+.tg-space--quarter         	    - Sets margin to a one-quarter spacing unit on all sides.
+.tg-space--half           		- Sets margin to a one-half spacing unit on all sides.
+.tg-space--double   			- Sets margin to a double spacing unit on all sides.
+.tg-space--top      			- Sets margin to a one-whole spacing unit on top.
+.tg-space--eighth--top    		- Sets margin to a one-eighth spacing unit on top.
+.tg-space--quarter--top 		- Sets margin to a one-quarter spacing unit on top.
+.tg-space--half--top      		- Sets margin to a one-half spacing unit on top.
+.tg-space--double--top 			- Sets margin to a double spacing unit on top.
+.tg-space--right    			- Sets margin to a one-whole spacing unit on the right side.
+.tg-space--eighth--right  		- Sets margin to a one-eighth spacing unit on the right side.
+.tg-space--quarter--right 		- Sets margin to a one-quarter spacing unit on the right side.
+.tg-space--half--right    		- Sets margin to a one-half spacing unit on the right side.
+.tg-space--double--right  		- Sets margin to a double spacing unit on the right side.
+.tg-space--bottom   			- Sets margin to a one-whole spacing unit on bottom.
+.tg-space--eighth--bottom 		- Sets margin to a one-eighth spacing unit on bottom.
+.tg-space--quarter--bottom		- Sets margin to a one-quarter spacing unit on bottom.
+.tg-space--half--bottom   		- Sets margin to a one-half spacing unit on bottom.
+.tg-space--double--bottom		- Sets margin to a double spacing unit on bottom.
+.tg-space--left     			- Sets margin to a one-whole spacing unit on the left side.
+.tg-space--eighth--left   		- Sets margin to a one-eighth spacing unit on the left side.
+.tg-space--quarter--left 		- Sets margin to a one-quarter spacing unit on the left side.
+.tg-space--half--left    		- Sets margin to a one-half spacing unit on the left side.
+.tg-space--double--left   		- Sets margin to a double spacing unit on the left side.
+.tg-space--ends     			- Sets margin to a one-whole spacing unit on top and bottom.
+.tg-space--eighth--ends   		- Sets margin to a one-eighth spacing unit on top and bottom.
+.tg-space--quarter--ends  		- Sets margin to a one-quarter spacing unit on top and bottom.
+.tg-space--half--ends     		- Sets margin to a one-half spacing unit on top and bottom.
+.tg-space--double--ends   		- Sets margin to a double spacing unit on top and bottom.
+.tg-space--sides    			- Sets margin to a one-whole spacing unit on the left and right sides.
+.tg-space--eighth--sides  		- Sets margin to a one-eighth spacing unit on the left and right sides.
+.tg-space--quarter--sides 		- Sets margin to a one-quarter spacing unit on the left and right sides.
+.tg-space--half--sides   		- Sets margin to a one-half spacing unit on the left and right sides.
+.tg-space--double--sides  		- Sets margin to a double spacing unit on the left and right sides.
+.tg-flush  						- Sets margin to zero on all sides.
+.tg-flush--top     				- Sets margin to zero on top.
+.tg-flush--right   				- Sets margin to zero on the right side.
+.tg-flush--bottom  				- Sets margin to zero on bottom.
+.tg-flush--left    				- Sets margin to zero on the left side.
+.tg-flush--ends    				- Sets margin to zero on top and bottom.
+.tg-flush--sides   				- Sets margin to zero on left and right sides.
+
+Markup: 
+<div class="{$modifiers}">[content here]</div> 
+
+Styleguide 105.1.1
+*/
+.tg-space {
+  margin: 24px !important;
+}
+
+.tg-space--eighth {
+  margin: 3px !important;
+}
+
+.tg-space--quarter {
+  margin: 6px !important;
+}
+
+.tg-space--half {
+  margin: 12px !important;
+}
+
+.tg-space--double {
+  margin: 48px !important;
+}
+
+.tg-flush {
+  margin: 0 !important;
+}
+
+.tg-space--top {
+  margin-top: 24px !important;
+}
+
+.tg-space--eighth--top {
+  margin-top: 3px !important;
+}
+
+.tg-space--quarter--top {
+  margin-top: 6px !important;
+}
+
+.tg-space--half--top {
+  margin-top: 12px !important;
+}
+
+.tg-space--double--top {
+  margin-top: 48px !important;
+}
+
+.tg-space--right {
+  margin-right: 24px !important;
+}
+
+.tg-space--eighth--right {
+  margin-right: 3px !important;
+}
+
+.tg-space--quarter--right {
+  margin-right: 6px !important;
+}
+
+.tg-space--half--right {
+  margin-right: 12px !important;
+}
+
+.tg-space--double--right {
+  margin-right: 48px !important;
+}
+
+.tg-space--bottom {
+  margin-bottom: 24px !important;
+}
+
+.tg-space--eighth--bottom {
+  margin-bottom: 3px !important;
+}
+
+.tg-space--quarter--bottom {
+  margin-bottom: 6px !important;
+}
+
+.tg-space--half--bottom {
+  margin-bottom: 12px !important;
+}
+
+.tg-space--double--bottom {
+  margin-bottom: 48px !important;
+}
+
+.tg-space--left {
+  margin-left: 24px !important;
+}
+
+.tg-space--eighth--left {
+  margin-left: 3px !important;
+}
+
+.tg-space--quarter--left {
+  margin-left: 6px !important;
+}
+
+.tg-space--half--left {
+  margin-left: 12px !important;
+}
+
+.tg-space--double--left {
+  margin-left: 48px !important;
+}
+
+.tg-space--ends {
+  margin-top: 24px !important;
+  margin-bottom: 24px !important;
+}
+
+.tg-space--eighth--ends {
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+}
+
+.tg-space--quarter--ends {
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+}
+
+.tg-space--half--ends {
+  margin-top: 12px !important;
+  margin-bottom: 12px !important;
+}
+
+.tg-space--double--ends {
+  margin-top: 48px !important;
+  margin-bottom: 48px !important;
+}
+
+.tg-space--sides {
+  margin-right: 24px !important;
+  margin-left: 24px !important;
+}
+
+.tg-space--eighth--sides {
+  margin-right: 3px !important;
+  margin-left: 3px !important;
+}
+
+.tg-space--quarter--sides {
+  margin-right: 6px !important;
+  margin-left: 6px !important;
+}
+
+.tg-space--half--sides {
+  margin-right: 12px !important;
+  margin-left: 12px !important;
+}
+
+.tg-space--double--sides {
+  margin-right: 48px !important;
+  margin-left: 48px !important;
+}
+
+.tg-flush--top {
+  margin-top: 0 !important;
+}
+
+.tg-flush--right {
+  margin-right: 0 !important;
+}
+
+.tg-flush--bottom {
+  margin-bottom: 0 !important;
+}
+
+.tg-flush--left {
+  margin-left: 0 !important;
+}
+
+.tg-flush--ends {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.tg-flush--sides {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  .tg-TABLET-space {
+    margin: 24px !important;
+  }
+
+  .tg-TABLET-space--eighth {
+    margin: 3px !important;
+  }
+
+  .tg-TABLET-space--quarter {
+    margin: 6px !important;
+  }
+
+  .tg-TABLET-space--half {
+    margin: 12px !important;
+  }
+
+  .tg-TABLET-space--double {
+    margin: 48px !important;
+  }
+
+  .tg-TABLET-flush {
+    margin: 0 !important;
+  }
+
+  .tg-TABLET-space--top {
+    margin-top: 24px !important;
+  }
+
+  .tg-TABLET-space--eighth--top {
+    margin-top: 3px !important;
+  }
+
+  .tg-TABLET-space--quarter--top {
+    margin-top: 6px !important;
+  }
+
+  .tg-TABLET-space--half--top {
+    margin-top: 12px !important;
+  }
+
+  .tg-TABLET-space--double--top {
+    margin-top: 48px !important;
+  }
+
+  .tg-TABLET-space--right {
+    margin-right: 24px !important;
+  }
+
+  .tg-TABLET-space--eighth--right {
+    margin-right: 3px !important;
+  }
+
+  .tg-TABLET-space--quarter--right {
+    margin-right: 6px !important;
+  }
+
+  .tg-TABLET-space--half--right {
+    margin-right: 12px !important;
+  }
+
+  .tg-TABLET-space--double--right {
+    margin-right: 48px !important;
+  }
+
+  .tg-TABLET-space--bottom {
+    margin-bottom: 24px !important;
+  }
+
+  .tg-TABLET-space--eighth--bottom {
+    margin-bottom: 3px !important;
+  }
+
+  .tg-TABLET-space--quarter--bottom {
+    margin-bottom: 6px !important;
+  }
+
+  .tg-TABLET-space--half--bottom {
+    margin-bottom: 12px !important;
+  }
+
+  .tg-TABLET-space--double--bottom {
+    margin-bottom: 48px !important;
+  }
+
+  .tg-TABLET-space--left {
+    margin-left: 24px !important;
+  }
+
+  .tg-TABLET-space--eighth--left {
+    margin-left: 3px !important;
+  }
+
+  .tg-TABLET-space--quarter--left {
+    margin-left: 6px !important;
+  }
+
+  .tg-TABLET-space--half--left {
+    margin-left: 12px !important;
+  }
+
+  .tg-TABLET-space--double--left {
+    margin-left: 48px !important;
+  }
+
+  .tg-TABLET-space--ends {
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .tg-TABLET-space--eighth--ends {
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
+  }
+
+  .tg-TABLET-space--quarter--ends {
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .tg-TABLET-space--half--ends {
+    margin-top: 12px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .tg-TABLET-space--double--ends {
+    margin-top: 48px !important;
+    margin-bottom: 48px !important;
+  }
+
+  .tg-TABLET-space--sides {
+    margin-right: 24px !important;
+    margin-left: 24px !important;
+  }
+
+  .tg-TABLET-space--eighth--sides {
+    margin-right: 3px !important;
+    margin-left: 3px !important;
+  }
+
+  .tg-TABLET-space--quarter--sides {
+    margin-right: 6px !important;
+    margin-left: 6px !important;
+  }
+
+  .tg-TABLET-space--half--sides {
+    margin-right: 12px !important;
+    margin-left: 12px !important;
+  }
+
+  .tg-TABLET-space--double--sides {
+    margin-right: 48px !important;
+    margin-left: 48px !important;
+  }
+
+  .tg-TABLET-flush--top {
+    margin-top: 0 !important;
+  }
+
+  .tg-TABLET-flush--right {
+    margin-right: 0 !important;
+  }
+
+  .tg-TABLET-flush--bottom {
+    margin-bottom: 0 !important;
+  }
+
+  .tg-TABLET-flush--left {
+    margin-left: 0 !important;
+  }
+
+  .tg-TABLET-flush--ends {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .tg-TABLET-flush--sides {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .tg-PHONE-space {
+    margin: 24px !important;
+  }
+
+  .tg-PHONE-space--eighth {
+    margin: 3px !important;
+  }
+
+  .tg-PHONE-space--quarter {
+    margin: 6px !important;
+  }
+
+  .tg-PHONE-space--half {
+    margin: 12px !important;
+  }
+
+  .tg-PHONE-space--double {
+    margin: 48px !important;
+  }
+
+  .tg-PHONE-flush {
+    margin: 0 !important;
+  }
+
+  .tg-PHONE-space--top {
+    margin-top: 24px !important;
+  }
+
+  .tg-PHONE-space--eighth--top {
+    margin-top: 3px !important;
+  }
+
+  .tg-PHONE-space--quarter--top {
+    margin-top: 6px !important;
+  }
+
+  .tg-PHONE-space--half--top {
+    margin-top: 12px !important;
+  }
+
+  .tg-PHONE-space--double--top {
+    margin-top: 48px !important;
+  }
+
+  .tg-PHONE-space--right {
+    margin-right: 24px !important;
+  }
+
+  .tg-PHONE-space--eighth--right {
+    margin-right: 3px !important;
+  }
+
+  .tg-PHONE-space--quarter--right {
+    margin-right: 6px !important;
+  }
+
+  .tg-PHONE-space--half--right {
+    margin-right: 12px !important;
+  }
+
+  .tg-PHONE-space--double--right {
+    margin-right: 48px !important;
+  }
+
+  .tg-PHONE-space--bottom {
+    margin-bottom: 24px !important;
+  }
+
+  .tg-PHONE-space--eighth--bottom {
+    margin-bottom: 3px !important;
+  }
+
+  .tg-PHONE-space--quarter--bottom {
+    margin-bottom: 6px !important;
+  }
+
+  .tg-PHONE-space--half--bottom {
+    margin-bottom: 12px !important;
+  }
+
+  .tg-PHONE-space--double--bottom {
+    margin-bottom: 48px !important;
+  }
+
+  .tg-PHONE-space--left {
+    margin-left: 24px !important;
+  }
+
+  .tg-PHONE-space--eighth--left {
+    margin-left: 3px !important;
+  }
+
+  .tg-PHONE-space--quarter--left {
+    margin-left: 6px !important;
+  }
+
+  .tg-PHONE-space--half--left {
+    margin-left: 12px !important;
+  }
+
+  .tg-PHONE-space--double--left {
+    margin-left: 48px !important;
+  }
+
+  .tg-PHONE-space--ends {
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .tg-PHONE-space--eighth--ends {
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
+  }
+
+  .tg-PHONE-space--quarter--ends {
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .tg-PHONE-space--half--ends {
+    margin-top: 12px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .tg-PHONE-space--double--ends {
+    margin-top: 48px !important;
+    margin-bottom: 48px !important;
+  }
+
+  .tg-PHONE-space--sides {
+    margin-right: 24px !important;
+    margin-left: 24px !important;
+  }
+
+  .tg-PHONE-space--eighth--sides {
+    margin-right: 3px !important;
+    margin-left: 3px !important;
+  }
+
+  .tg-PHONE-space--quarter--sides {
+    margin-right: 6px !important;
+    margin-left: 6px !important;
+  }
+
+  .tg-PHONE-space--half--sides {
+    margin-right: 12px !important;
+    margin-left: 12px !important;
+  }
+
+  .tg-PHONE-space--double--sides {
+    margin-right: 48px !important;
+    margin-left: 48px !important;
+  }
+
+  .tg-PHONE-flush--top {
+    margin-top: 0 !important;
+  }
+
+  .tg-PHONE-flush--right {
+    margin-right: 0 !important;
+  }
+
+  .tg-PHONE-flush--bottom {
+    margin-bottom: 0 !important;
+  }
+
+  .tg-PHONE-flush--left {
+    margin-left: 0 !important;
+  }
+
+  .tg-PHONE-flush--ends {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .tg-PHONE-flush--sides {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+/* Padding
+
+<h1>.tg-pad</h1>
+
+Adds unit(s) of padding -- or a fraction of a unit -- to one or more sides of an element.
+
+<div class="tgKSS-callout">
+  <span class="tgKSS-callout-heading">Breakpoint-specific triggers</span> 
+  <p>Classes in this section can be selectively invoked for any combination of available breakpoints: TABLET, PHONE, WIDE. For additional explanation of breakpoint-specific triggers for classes and how to invoke them, please refer to the <a target="_blank" href="https://github.com/tgui/tgUI/wiki/CSS-Classes-with-Breakpoint-Targeting-Support">wiki</a>. (Please note: must be logged into GitHub in order access wiki.)
+</div>
+
+.tg-pad             			- Sets padding to a one-whole spacing unit on all sides.
+.tg-pad--eighth        			- Sets padding to a one-eighth spacing unit on all sides.
+.tg-pad--quarter         	    - Sets padding to a one-quarter spacing unit on all sides.
+.tg-pad--half           		- Sets padding to a one-half spacing unit on all sides.
+.tg-pad--double   				- Sets padding to a double spacing unit on all sides.
+.tg-pad--top      				- Sets padding to a one-whole spacing unit on top.
+.tg-pad--eighth--top    		- Sets padding to a one-eighth spacing unit on top.
+.tg-pad--quarter--top 			- Sets padding to a one-quarter spacing unit on top.
+.tg-pad--half--top      		- Sets padding to a one-half spacing unit on top.
+.tg-pad--double--top 			- Sets padding to a double spacing unit on top.
+.tg-pad--right    				- Sets padding to a one-whole spacing unit on the right side.
+.tg-pad--eighth--right  		- Sets padding to a one-eighth spacing unit on the right side.
+.tg-pad--quarter--right 		- Sets padding to a one-quarter spacing unit on the right side.
+.tg-pad--half--right    		- Sets padding to a one-half spacing unit on the right side.
+.tg-pad--double--right  		- Sets padding to a double spacing unit on the right side.
+.tg-pad--bottom   				- Sets padding to a one-whole spacing unit on bottom.
+.tg-pad--eighth--bottom 		- Sets padding to a one-eighth spacing unit on bottom.
+.tg-pad--quarter--bottom		- Sets padding to a one-quarter spacing unit on bottom.
+.tg-pad--half--bottom   		- Sets padding to a one-half spacing unit on bottom.
+.tg-pad--double--bottom			- Sets padding to a double spacing unit on bottom.
+.tg-pad--left     				- Sets padding to a one-whole spacing unit on the left side.
+.tg-pad--eighth--left   		- Sets padding to a one-eighth spacing unit on the left side.
+.tg-pad--quarter--left 			- Sets padding to a one-quarter spacing unit on the left side.
+.tg-pad--half--left    			- Sets padding to a one-half spacing unit on the left side.
+.tg-pad--double--left   		- Sets padding to a double spacing unit on the left side.
+.tg-pad--ends     				- Sets padding to a one-whole spacing unit on top and bottom.
+.tg-pad--eighth--ends   		- Sets padding to a one-eighth spacing unit on top and bottom.
+.tg-pad--quarter--ends  		- Sets padding to a one-quarter spacing unit on top and bottom.
+.tg-pad--half--ends     		- Sets padding to a one-half spacing unit on top and bottom.
+.tg-pad--double--ends   		- Sets padding to a double spacing unit on top and bottom.
+.tg-pad--sides    				- Sets padding to a one-whole spacing unit on the left and right sides.
+.tg-pad--eighth--sides  		- Sets padding to a one-eighth spacing unit on the left and right sides.
+.tg-pad--quarter--sides 		- Sets padding to a one-quarter spacing unit on the left and right sides.
+.tg-pad--half--sides   			- Sets padding to a one-half spacing unit on the left and right sides.
+.tg-pad--double--sides  		- Sets padding to a double spacing unit on the left and right sides.
+.tg-pad--none  					- Sets padding to zero on all sides.
+.tg-pad--none--top     			- Sets padding to zero on top.
+.tg-pad--none--right   			- Sets padding to zero on the right side.
+.tg-pad--none--bottom  			- Sets padding to zero on bottom.
+.tg-pad--none--left    			- Sets padding to zero on the left side.
+.tg-pad--none--ends    			- Sets padding to zero on top and bottom.
+.tg-pad--none--sides   			- Sets padding to zero on left and right sides.
+
+Markup: 
+<div class="{$modifiers}" style="width:200px;border:1px dashed #bbb;">[content here]</div> 
+
+Styleguide 105.2.1
+*/
+.tg-pad {
+  padding: 24px !important;
+}
+
+.tg-pad--eighth {
+  padding: 3px !important;
+}
+
+.tg-pad--quarter {
+  padding: 6px !important;
+}
+
+.tg-pad--half {
+  padding: 12px !important;
+}
+
+.tg-pad--double {
+  padding: 48px !important;
+}
+
+.tg-pad--none {
+  padding: 0 !important;
+}
+
+.tg-pad--top {
+  padding-top: 24px !important;
+}
+
+.tg-pad--eighth--top {
+  padding-top: 3px !important;
+}
+
+.tg-pad--quarter--top {
+  padding-top: 6px !important;
+}
+
+.tg-pad--half--top {
+  padding-top: 12px !important;
+}
+
+.tg-pad--double--top {
+  padding-top: 48px !important;
+}
+
+.tg-pad--right {
+  padding-right: 24px !important;
+}
+
+.tg-pad--eighth--right {
+  padding-right: 3px !important;
+}
+
+.tg-pad--quarter--right {
+  padding-right: 6px !important;
+}
+
+.tg-pad--half--right {
+  padding-right: 12px !important;
+}
+
+.tg-pad--double--right {
+  padding-right: 48px !important;
+}
+
+.tg-pad--bottom {
+  padding-bottom: 24px !important;
+}
+
+.tg-pad--eighth--bottom {
+  padding-bottom: 3px !important;
+}
+
+.tg-pad--quarter--bottom {
+  padding-bottom: 6px !important;
+}
+
+.tg-pad--half--bottom {
+  padding-bottom: 12px !important;
+}
+
+.tg-pad--double--bottom {
+  padding-bottom: 48px !important;
+}
+
+.tg-pad--left {
+  padding-left: 24px !important;
+}
+
+.tg-pad--eighth--left {
+  padding-left: 3px !important;
+}
+
+.tg-pad--quarter--left {
+  padding-left: 6px !important;
+}
+
+.tg-pad--half--left {
+  padding-left: 12px !important;
+}
+
+.tg-pad--double--left {
+  padding-left: 48px !important;
+}
+
+.tg-pad--ends {
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+}
+
+.tg-pad--eighth--ends {
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+}
+
+.tg-pad--quarter--ends {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.tg-pad--half--ends {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+.tg-pad--double--ends {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+
+.tg-pad--sides {
+  padding-right: 24px !important;
+  padding-left: 24px !important;
+}
+
+.tg-pad--eighth--sides {
+  padding-right: 3px !important;
+  padding-left: 3px !important;
+}
+
+.tg-pad--quarter--sides {
+  padding-right: 6px !important;
+  padding-left: 6px !important;
+}
+
+.tg-pad--half--sides {
+  padding-right: 12px !important;
+  padding-left: 12px !important;
+}
+
+.tg-pad--double--sides {
+  padding-right: 48px !important;
+  padding-left: 48px !important;
+}
+
+.tg-pad--none--top {
+  padding-top: 0 !important;
+}
+
+.tg-pad--none--right {
+  padding-right: 0 !important;
+}
+
+.tg-pad--none--bottom {
+  padding-bottom: 0 !important;
+}
+
+.tg-pad--none--left {
+  padding-left: 0 !important;
+}
+
+.tg-pad--none--ends {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.tg-pad--none--sides {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  .tg-TABLET-pad {
+    padding: 24px !important;
+  }
+
+  .tg-TABLET-pad--eighth {
+    padding: 3px !important;
+  }
+
+  .tg-TABLET-pad--quarter {
+    padding: 6px !important;
+  }
+
+  .tg-TABLET-pad--half {
+    padding: 12px !important;
+  }
+
+  .tg-TABLET-pad--double {
+    padding: 48px !important;
+  }
+
+  .tg-TABLET-pad--none {
+    padding: 0 !important;
+  }
+
+  .tg-TABLET-pad--top {
+    padding-top: 24px !important;
+  }
+
+  .tg-TABLET-pad--eighth--top {
+    padding-top: 3px !important;
+  }
+
+  .tg-TABLET-pad--quarter--top {
+    padding-top: 6px !important;
+  }
+
+  .tg-TABLET-pad--half--top {
+    padding-top: 12px !important;
+  }
+
+  .tg-TABLET-pad--double--top {
+    padding-top: 48px !important;
+  }
+
+  .tg-TABLET-pad--right {
+    padding-right: 24px !important;
+  }
+
+  .tg-TABLET-pad--eighth--right {
+    padding-right: 3px !important;
+  }
+
+  .tg-TABLET-pad--quarter--right {
+    padding-right: 6px !important;
+  }
+
+  .tg-TABLET-pad--half--right {
+    padding-right: 12px !important;
+  }
+
+  .tg-TABLET-pad--double--right {
+    padding-right: 48px !important;
+  }
+
+  .tg-TABLET-pad--bottom {
+    padding-bottom: 24px !important;
+  }
+
+  .tg-TABLET-pad--eighth--bottom {
+    padding-bottom: 3px !important;
+  }
+
+  .tg-TABLET-pad--quarter--bottom {
+    padding-bottom: 6px !important;
+  }
+
+  .tg-TABLET-pad--half--bottom {
+    padding-bottom: 12px !important;
+  }
+
+  .tg-TABLET-pad--double--bottom {
+    padding-bottom: 48px !important;
+  }
+
+  .tg-TABLET-pad--left {
+    padding-left: 24px !important;
+  }
+
+  .tg-TABLET-pad--eighth--left {
+    padding-left: 3px !important;
+  }
+
+  .tg-TABLET-pad--quarter--left {
+    padding-left: 6px !important;
+  }
+
+  .tg-TABLET-pad--half--left {
+    padding-left: 12px !important;
+  }
+
+  .tg-TABLET-pad--double--left {
+    padding-left: 48px !important;
+  }
+
+  .tg-TABLET-pad--ends {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .tg-TABLET-pad--eighth--ends {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+  }
+
+  .tg-TABLET-pad--quarter--ends {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+  }
+
+  .tg-TABLET-pad--half--ends {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  .tg-TABLET-pad--double--ends {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .tg-TABLET-pad--sides {
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+  }
+
+  .tg-TABLET-pad--eighth--sides {
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+  }
+
+  .tg-TABLET-pad--quarter--sides {
+    padding-right: 6px !important;
+    padding-left: 6px !important;
+  }
+
+  .tg-TABLET-pad--half--sides {
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+  }
+
+  .tg-TABLET-pad--double--sides {
+    padding-right: 48px !important;
+    padding-left: 48px !important;
+  }
+
+  .tg-TABLET-pad--none--top {
+    padding-top: 0 !important;
+  }
+
+  .tg-TABLET-pad--none--right {
+    padding-right: 0 !important;
+  }
+
+  .tg-TABLET-pad--none--bottom {
+    padding-bottom: 0 !important;
+  }
+
+  .tg-TABLET-pad--none--left {
+    padding-left: 0 !important;
+  }
+
+  .tg-TABLET-pad--none--ends {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .tg-TABLET-pad--none--sides {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .tg-PHONE-pad {
+    padding: 24px !important;
+  }
+
+  .tg-PHONE-pad--eighth {
+    padding: 3px !important;
+  }
+
+  .tg-PHONE-pad--quarter {
+    padding: 6px !important;
+  }
+
+  .tg-PHONE-pad--half {
+    padding: 12px !important;
+  }
+
+  .tg-PHONE-pad--double {
+    padding: 48px !important;
+  }
+
+  .tg-PHONE-pad--none {
+    padding: 0 !important;
+  }
+
+  .tg-PHONE-pad--top {
+    padding-top: 24px !important;
+  }
+
+  .tg-PHONE-pad--eighth--top {
+    padding-top: 3px !important;
+  }
+
+  .tg-PHONE-pad--quarter--top {
+    padding-top: 6px !important;
+  }
+
+  .tg-PHONE-pad--half--top {
+    padding-top: 12px !important;
+  }
+
+  .tg-PHONE-pad--double--top {
+    padding-top: 48px !important;
+  }
+
+  .tg-PHONE-pad--right {
+    padding-right: 24px !important;
+  }
+
+  .tg-PHONE-pad--eighth--right {
+    padding-right: 3px !important;
+  }
+
+  .tg-PHONE-pad--quarter--right {
+    padding-right: 6px !important;
+  }
+
+  .tg-PHONE-pad--half--right {
+    padding-right: 12px !important;
+  }
+
+  .tg-PHONE-pad--double--right {
+    padding-right: 48px !important;
+  }
+
+  .tg-PHONE-pad--bottom {
+    padding-bottom: 24px !important;
+  }
+
+  .tg-PHONE-pad--eighth--bottom {
+    padding-bottom: 3px !important;
+  }
+
+  .tg-PHONE-pad--quarter--bottom {
+    padding-bottom: 6px !important;
+  }
+
+  .tg-PHONE-pad--half--bottom {
+    padding-bottom: 12px !important;
+  }
+
+  .tg-PHONE-pad--double--bottom {
+    padding-bottom: 48px !important;
+  }
+
+  .tg-PHONE-pad--left {
+    padding-left: 24px !important;
+  }
+
+  .tg-PHONE-pad--eighth--left {
+    padding-left: 3px !important;
+  }
+
+  .tg-PHONE-pad--quarter--left {
+    padding-left: 6px !important;
+  }
+
+  .tg-PHONE-pad--half--left {
+    padding-left: 12px !important;
+  }
+
+  .tg-PHONE-pad--double--left {
+    padding-left: 48px !important;
+  }
+
+  .tg-PHONE-pad--ends {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .tg-PHONE-pad--eighth--ends {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+  }
+
+  .tg-PHONE-pad--quarter--ends {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+  }
+
+  .tg-PHONE-pad--half--ends {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  .tg-PHONE-pad--double--ends {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .tg-PHONE-pad--sides {
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+  }
+
+  .tg-PHONE-pad--eighth--sides {
+    padding-right: 3px !important;
+    padding-left: 3px !important;
+  }
+
+  .tg-PHONE-pad--quarter--sides {
+    padding-right: 6px !important;
+    padding-left: 6px !important;
+  }
+
+  .tg-PHONE-pad--half--sides {
+    padding-right: 12px !important;
+    padding-left: 12px !important;
+  }
+
+  .tg-PHONE-pad--double--sides {
+    padding-right: 48px !important;
+    padding-left: 48px !important;
+  }
+
+  .tg-PHONE-pad--none--top {
+    padding-top: 0 !important;
+  }
+
+  .tg-PHONE-pad--none--right {
+    padding-right: 0 !important;
+  }
+
+  .tg-PHONE-pad--none--bottom {
+    padding-bottom: 0 !important;
+  }
+
+  .tg-PHONE-pad--none--left {
+    padding-left: 0 !important;
+  }
+
+  .tg-PHONE-pad--none--ends {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .tg-PHONE-pad--none--sides {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+/* Visually Hidden
+
+<h1>.tg-visuallyHidden</h1>
+
+Hides content, taking it out of the layout flow, along with extra measures to ensure it is removed completely. Breakpoint-targeted versions of this class enable selectively applying it for different screen sizes.
+
+<div class="tgKSS-callout">
+  <span class="tgKSS-callout-heading">Breakpoint-specific triggers</span> 
+  <p>Classes in this section can be selectively invoked for any combination of available breakpoints: TABLET, PHONE, WIDE. For additional explanation of breakpoint-specific triggers for classes and how to invoke them, please refer to the <a target="_blank" href="https://github.com/tgui/tgUI/wiki/CSS-Classes-with-Breakpoint-Targeting-Support">wiki</a>. (Please note: must be logged into GitHub in order access wiki.)
+</div>
+
+Markup: 
+<div class="tg-visuallyHidden">[content you wish to completely hide]</div>
+
+Styleguide 115.3.1
+
+*/
+.tg-visuallyHidden {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+.tg-visuallyHidden:active,
+.tg-visuallyHidden:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+@media only screen and (min-width: 1025px) {
+  .tg-DESK-visuallyHidden {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+  }
+
+  .tg-DESK-visuallyHidden:active,
+  .tg-DESK-visuallyHidden:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .tg-TABLET-visuallyHidden {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+  }
+
+  .tg-TABLET-visuallyHidden:active,
+  .tg-TABLET-visuallyHidden:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .tg-PHONE-visuallyHidden {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+  }
+
+  .tg-PHONE-visuallyHidden:active,
+  .tg-PHONE-visuallyHidden:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
+/* Hidden
+
+<h1>.tg-hidden</h1>
+
+Hides content from both browsers and screenreaders, and takes it out of the layout flow.
+
+Markup: 
+<div class="tg-hidden">[content you wish to completely hide]</div>
+
+Styleguide 115.3.2
+
+*/
+.tg-hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* Invisible
+
+<h1>.tg-invisible</h1>
+
+Hides content from both browsers and screenreaders, but maintains the layout flow (i.e., reserving the space the content would normally occupy).
+
+Markup: 
+<div class="tg-invisible">[content you wish to make invisible, but still reserve the space it would normally occupy]</div>
+
+Styleguide 115.3.3
+
+*/
+.tg-invisible {
+  visibility: hidden;
+}
+
+/* Remove flash of unstyled content
+
+<h1>.tg-removeFlashOfUnstyledContent</h1>
+
+Used to hide content that comes down from the server without styling. Once the styling has applied dynamically (sometime after the page has loaded), this class can be removed, allowing the content to show.
+
+Markup: 
+<div class="tg-removeFlashOfUnstyledContent">[dynamically styled content here]</div>
+
+Styleguide 600.2.1
+
+*/
+.tg-removeFlashOfUnstyledContent {
+  display: none;
+}
+
+/* Prevent Selection
+
+<h1>.tg-prevent-selection</h1>
+
+Class prevents a user from selecting content with their mouse. 
+
+Markup: 
+<div class="tg-prevent-selection">[content that should not be 'selectable']</div>
+
+Styleguide 600.3.1
+
+*/
+.tg-prevent-selection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Clearfix
+
+<h1>.tg-clearfix</h1>
+
+Markup: 
+<div class="tg-float--right  tg-clearfix">
+    <a href="#" class="tg-slideout__close">&nbsp;</a>
+</div>
+
+Styleguide 110.2.1
+
+*/
+/* Layout: Grid, Push/Pull
+
+Classes for creating and refining responsive grid layouts.
+
+Styleguide 100
+*/
+/* Layout: Width
+
+Classes for setting the width of an element to a particular proportion.
+
+Styleguide 103
+*/
+/* Layout: Margin, Padding
+
+Classes for adding margin and/or padding to a container element.
+
+Styleguide 105
+*/
+/* Layout: Float, Clearfix, Vertical Alignment 
+
+Classes for floating (or vertically aligning content) within a container element. The clearfix class is useful for fixing layout distortions that can occur after a float is applied. They are especially useful for floated elements that are arranged horizontally. 
+
+Styleguide 110
+*/
+/* Layout: Display, Visually Hidden
+
+Classes for overriding the native display mode for an element and/or hiding elements.
+
+Styleguide 115
+*/
+/* Layout: Containers
+
+Classes for a generic container used to contain and properly layout content.
+
+Styleguide 120
+*/
+/* Forms, Field Groups, Inputs
+
+These classes are used to build forms. When used in combination with the `tg-fieldGroup--grid` class, forms can be made to behave responsively. For a detailed explanation of how to build tgUI forms, please read the <a target="_blank" href="https://github.com/tgui/tgUI/wiki/Responsive-Forms">Responsive Form wiki.</a> (Please note: You must be logged into GitHub in order access this wiki.)
+
+Styleguide 200
+*/
+/* Element: Button
+
+Classes for implementing consistently styled button(s).
+
+Styleguide 301
+*/
+/* Element: Fieldset
+
+Classes for implementing fieldsets with an alternate, consistent styling.
+
+Styleguide 302
+*/
+/* Element: Feature Box
+
+Classes for implementing the Feature Box container element.
+
+Styleguide 305
+*/
+/* Element: Tab, Tabset
+
+Classes for implementing tabs and tabset container elements.
+
+Styleguide 310
+*/
+/* Element: Table
+
+Classes for styling HTML tables.
+
+Styleguide 315
+*/
+/* Element: Info Bar
+
+Classes for implementing the Info Bar element.
+
+Styleguide 320
+*/
+/* Element: Badge
+
+Classes for styling a badge element.
+
+Styleguide 335
+*/
+/* Element: Step Wizard
+
+Classes for implementing a step wizard container.
+
+Styleguide 340
+*/
+/* Element: Step Arrows
+
+Classes for implementing a step arrow containers.
+
+Styleguide 345
+*/
+/* Element: inTouch Slide Out Panel
+
+Classes for styling a slide out panel containing the Tangoe inTouch interface.
+
+Styleguide 350
+*/
+/* Text: Typography
+
+Typography classes are available for styling strings of text.
+
+Styleguide 400
+*/
+/* Text: Headings, Titles, Breadcrumbs
+
+Classes for styling headings, titles, and/or breadcrumbs.
+
+Styleguide 405
+*/
+/* Icons
+
+The icon classes used for displaying sprited images.  
+
+Styleguide 500
+*/
+/* Icons: Flags
+
+The icon classes used for displaying icons that depict national flags.
+
+Styleguide 505
+*/
+/* Other
+
+Miscellaneous helpful classes not classified in other categories.
+
+Styleguide 600
+*/
+/* Outer Shell
+
+Classes used in styling the outer chrome/shell of a web application.
+
+Styleguide 605
+*/
+.__TGUI_TEST_END_CSS2__ {
+  background: blue;
+}
