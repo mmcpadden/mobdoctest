@@ -1,0 +1,13 @@
+name: "MOBPROC REST API Documentation"
+description: "Concepts and tutorials for using Tangoe's Mobile Procurement API"
+
+
+#url: "http://tangoe.github.io/Mobile-Procurement-API-Documentation/" 
+url: "https://mmcpadden.github.io/mobdoctest"   #Staging account for QA purposes
+baseurl: ""
+
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
