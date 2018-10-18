@@ -1,0 +1,69 @@
+{% include header.html %}
+
+
+<div class="dc-page" style="padding-top:0px">
+   
+  <!-- tgUI grid version -->
+  <div class="dc-pageLayout">
+    <div class="dc-pageLayout_cell--nav  tg-two-fifths">
+
+      <nav role="navigation" class="dc-navPanel">
+      {% for navoption in site.data.nav %}
+        {% assign pageURL = page.url %}
+        {% assign currURL = navoption.href | prepend: '/' %}
+
+        <div class="dc-navOption  dc-navOption__top">
+        {% if  page.url == navoption.href %}        
+          <a href="{{site.url}}{{ navoption.href }}" class="dc-navOption__active">{{ navoption.label }}</a>
+        {% else %}
+          <a href="{{site.url}}{{ navoption.href }}">{{ navoption.label }}</a>
+        {% endif %}
+         
+          {% if navoption.subOne != null %}
+            {% for sub1 in navoption.subOne %}              
+              {% assign subCurrURL = sub1.href | prepend: '/' %}
+
+              <div class="dc-navOption  dc-navOption__subone">
+              {% if page.url == subCurrURL %}
+              <a href="{{ site.url }}{{ sub1.href }}" class="dc-navOption__active">{{ sub1.label }}</a>
+              {% else %}
+              <a href="{{ site.url }}{{ sub1.href }}">{{ sub1.label }}</a>
+              {% endif %}
+              </div>
+
+
+            {% if navoption.subTwo != null %}
+              {% for sub2 in navoption.subTwo %}              
+                {% assign sub2urrURL = sub2.href | prepend: '/' %}
+
+                <div class="dc-navOption  dc-navOption__subone  tg-pad--left">
+                {% if page.url == sub2CurrURL %}
+                <a href="{{ site.url }}{{ sub2.href }}" class="dc-navOption__active">{{ sub2.label }}</a>
+                {% else %}
+                <a href="{{ site.url }}{{ sub2.href }}">{{ sub2.label }}</a>
+                {% endif %}
+                </div>
+              {% endfor %}
+            {% endif %}
+
+
+              
+            {% endfor %}
+          {% endif %}
+
+            
+         
+        </div>
+      {% endfor %}
+      </nav> 
+
+    </div><!--
+    --><div class="tg-grid__cell  tg-pad"> 
+
+      {{ content }}
+
+    </div>
+  </div>  
+</div>  
+ 
+{% include footer.html %}
